@@ -1,0 +1,17 @@
+.landing-second {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+.landing-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+    position: relative;
+    flex-wrap: wrap;
+}         
