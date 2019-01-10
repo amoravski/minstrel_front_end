@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
     return (
         <div className="ui secondary pointing menu">
-            <h3>Minstrel</h3>
+            <h3 className="active item">Minstrel</h3>
             <div className="right menu">
                 <p className="item">MAP</p>
                 <p className="item">PERFORMERS</p>

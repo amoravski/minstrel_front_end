@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './LandingFirst.css';
+
 const LandingFirst = () => {
     return(
-            <div className="ui vertical stripe segment" style={{height: '95vh', display: 'flex', flexFlow: 'column nowrap'}}>                                   
-                <div className="ui left aligned stackable grid container" style={{flex: 1}}>
+            <div className="landing-first ui">
+                <div className="landing-content ui left aligned centered grid container" >
                     <div className="row">
                         <div className="eight wide column">
                             <h1 className="ui left aligned header">Excepteur sint occaecat</h1>
