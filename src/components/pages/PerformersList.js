@@ -1,11 +1,15 @@
 import React from 'react';
 
-const PerformersList = () => {
-    return (
-        <div>
-            Performers List
-        </div>
+import Sidebar from '../Sidebar';
+
+class PerformersList extends React.Component {
+    render () {
+        return (
+            <div>
+                <Sidebar />
+            </div>
     );
+    }
 }
 
 export default PerformersList;
