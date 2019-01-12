@@ -6,7 +6,7 @@ const Card = () => {
     return (
         <div className="ui">
                     <div className="ui fluid image">
-                        <img src="https://static1.squarespace.com/static/50e70b75e4b0d5ee8b74860b/t/515602bfe4b0fc0d94666eb5/1364591296832/profile+blank.jpg" />
+                        <img alt="" src="https://static1.squarespace.com/static/50e70b75e4b0d5ee8b74860b/t/515602bfe4b0fc0d94666eb5/1364591296832/profile+blank.jpg" />
                     </div>
                     <div className="content">
                         <p className="ui center aligned header">Lorem ipsum dolor</p>

@@ -1,6 +1,9 @@
 import React from 'react';
 import Leaflet from 'leaflet'
-import Map from '../../Map';
+
+import Map from '../Map';
+import Header from '../Header';
+import './Landing.css';
 import LandingFirst from './LandingFirst';
 import LandingSecond from './LandingSecond';
 
@@ -10,10 +13,16 @@ Leaflet.Icon.Default.imagePath =
 class Landing extends React.Component {
     render () {
         return (
-            <div className="ui container">
-                <LandingFirst />
-                <LandingSecond />
-                <Map   />
+            <div className="landing ui">
+                <Header />
+                <div className="">
+                    <LandingFirst />
+                    <LandingSecond />
+                </div>
+                <div style={{ marginBottom: "20vh", height: "80vh"}}>
+                    <h3 style={{height: "10%"}}>Map of performers </h3>
+                    <Map  />
+                </div>
             </div>
         );
     }
