@@ -1,17 +1,17 @@
 .landing-first {
     display: flex;
-    justify-content: center;
-    align-items: center;
     align-content: center;
     flex-wrap: wrap;
     height: 96vh;
+    justify-content: space-between;
+    overflow: hidden;
 }
 .landing-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     align-content: center;
-    height: 100%;
     position: relative;
-    flex-wrap: wrap;
+}
+
+.landing-image {
+    margin-left: auto;
+    position: relative;
 }
