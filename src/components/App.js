@@ -3,7 +3,7 @@ import { Router, Route } from 'react-router-dom';
 
 import history from '../history';
 import Landing from './Landing/Landing';
-import PerformersList from './pages/PerformersList';
+import PerformersListPage from './pages/PerformersListPage';
 import MapPage from './pages/MapPage';
 import Footer from './Footer';
 
@@ -15,10 +15,10 @@ class App extends React.Component {
                     <div>
                         <Route path="/" exact component={Landing} />
                         <Route path="/map" exact component={MapPage} />
-                        <Route path="/performers" exact component={PerformersList} />
+                        <Route path="/performers" exact component={PerformersListPage} />
+                        <Footer />
                     </div>
                 </Router>
-                <Footer />
             </div>
         );
     }
