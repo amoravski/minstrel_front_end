@@ -22,7 +22,7 @@ const LandingSecond = () => {
     return (
         <div className="landing-second ui">
             <h1 className="ui left aligned header">What we do?</h1>
-            <div className="landing-content ui center aligned centered grid container">
+            <div className="landing-content computer only ui center aligned centered grid container">
                 <div className="row">
                 <div className="four wide column">
                     <Card />

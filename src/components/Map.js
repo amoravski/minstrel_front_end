@@ -14,13 +14,18 @@ export default class SimpleExample extends Component<{}, State> {
   state = {
     lat: 42.698334,
     lng: 23.319941,
-    zoom: 14,
+    zoom: 12,
+  }
+
+  componentDidMount () {
+    // Removes annoying zoom control, maybe find a prettier way to do this?
+    document.querySelector(".leaflet-top").remove();
   }
 
   render() {
     const position = [this.state.lat, this.state.lng]
       return (
-    <div style={{height: "90%"}}>
+    <div style={{height: `${this.props.height}`}}>
       <Map center={position} zoom={this.state.zoom} style={{height: "100%"}}>
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

@@ -6,7 +6,7 @@ import Map from '../Map';
 const App = () => {
     return (
         <div>
-            <Map />
+            <Map height="100vh" />
             <Sidebar />
         </div>
     );

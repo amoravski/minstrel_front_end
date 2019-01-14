@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
 class Sidebar extends React.Component {
-    state = { visible: true };
+    state = { visible: true, first:true };
 
     toggleSidebar = () => {
-        this.setState({visible: !this.state.visible})
+        this.setState({visible: !this.state.visible, first: false})
     };
 
     renderMenu = () => {
@@ -39,7 +39,8 @@ class Sidebar extends React.Component {
 
         if (this.state.visible === true) {
             return (
-                <div className="side-sidebar ui visible slide-in wide sidebar" style={{ backgroundColor: "#000000", overflowX: "hidden"}}>
+
+                <div className={`visible-sidebar ui visible wide sidebar ${this.state.first ? "" : "slide-in"}`} style={{ backgroundColor: "#000000", overflowX: "hidden"}}>
                     {this.renderMenu()} 
                 </div>
             );
@@ -58,9 +59,7 @@ class Sidebar extends React.Component {
 
     render () {
         return (
-            <div>
-                {this.renderIfVisible()}
-            </div>
+                this.renderIfVisible()
         );
     }
 }
