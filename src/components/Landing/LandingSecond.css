@@ -1,9 +1,4 @@
 .landing-second {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
     height: 100vh;
 }
 .landing-content {

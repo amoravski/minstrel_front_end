@@ -1,0 +1,9 @@
+.landing-third {
+    height: 100vh;
+}
+
+.landing-third-content {
+    display: flex;
+    align-content: center;
+    height: 100%;
+}
