@@ -6,9 +6,10 @@
 .close-button {
 }
 
-.sidebar {
+.visible-sidebar {
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
+    z-index: 1;
 }
 
 .slide-in {
