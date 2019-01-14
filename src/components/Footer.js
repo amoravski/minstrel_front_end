@@ -1,5 +1,8 @@
 import React from 'react';
+
 import './Footer.css'
+import { Link } from 'react-router-dom';
+
 
 const Footer = () => {
     return (
@@ -15,10 +18,11 @@ const Footer = () => {
                 <div className="three wide column">
                     <div className="ui secondary vertical menu">
                         <div className="right menu">
-                            <p className="item">Map</p>
-                            <p className="item">Performers</p>
-                            <p className="item">Log in</p>
-                            <p className="item">Sign up</p>
+                            <Link to="/map" className="item">Map</Link> 
+                            <Link to="/performers" className="item">Performers</Link> 
+                            <Link to="/signin" className="item">Sign in</Link> 
+                            <Link to="/register" className="item">Register</Link> 
+            
                         </div>
                     </div>
                 </div>
