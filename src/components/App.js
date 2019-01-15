@@ -16,7 +16,6 @@ class App extends React.Component {
                         <Route path="/" exact component={Landing} />
                         <Route path="/map" exact component={MapPage} />
                         <Route path="/performers" exact component={PerformersListPage} />
-                        <Footer />
                     </div>
                 </Router>
             </div>

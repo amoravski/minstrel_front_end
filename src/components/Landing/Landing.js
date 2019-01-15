@@ -3,6 +3,7 @@ import Leaflet from 'leaflet'
 
 import Map from '../Map';
 import Header from '../Header';
+import Footer from '../Footer';
 import './Landing.css';
 import LandingFirst from './LandingFirst';
 import LandingSecond from './LandingSecond';
@@ -14,6 +15,7 @@ Leaflet.Icon.Default.imagePath =
 class Landing extends React.Component {
     render () {
         return (
+            <div>
             <div className="landing ui">
                 <Header />
                 <div className="ui fluid container">
@@ -25,6 +27,8 @@ class Landing extends React.Component {
                 <div style={{ marginBottom: "20vh"}}>
                     <Map height="80vh" />
                 </div>
+            </div>
+                <Footer />
             </div>
         );
     }
