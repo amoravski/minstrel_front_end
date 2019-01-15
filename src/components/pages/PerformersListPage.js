@@ -5,9 +5,9 @@ import PerformersList from '../PerformersList';
 
 const PerformersListPage = () => {
     return (
-        <div className="" style={{ height: "100vh", display: "flex" }}>
-            <Sidebar />
+        <div>
             <PerformersList />
+            <Sidebar />
         </div>
     );
 }
