@@ -2,15 +2,15 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = props => {
     return (
         <div className="ui secondary pointing menu">
-            <Link to="/" className="active item header">Minstrel</Link>
+            <Link to="/" className={`${props.landing} item`}>Minstrel</Link>
             <div className="right menu">
                 <Link to="/map" className="item">Map</Link>
                 <Link to="/performers" className="item">Performance</Link>
-                <Link to="/signin" className="item">Sign In</Link>
-                <Link to="/register" className="item">Register</Link>
+                <Link to="/signin" className={`${props.signin} item`}>Sign In</Link>
+                <Link to="/register" className={`${props.register} item`}>Register</Link>
             </div>
         </div>
         );
