@@ -17,7 +17,7 @@ class Landing extends React.Component {
         return (
             <div>
             <div className="landing ui">
-                <Header />
+                <Header landing="active" />
                 <div className="ui fluid container">
                     <LandingFirst />
                     <LandingSecond />
