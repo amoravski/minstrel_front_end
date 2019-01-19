@@ -1,0 +1,14 @@
+.register {
+    margin-left: 140px;
+    margin-right: 140px;
+    height: 100vh;
+}
+
+.register-types {
+    display: flex;
+    align-content: center;
+    height: 90%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
