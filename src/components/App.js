@@ -4,6 +4,7 @@ import { Router, Route } from 'react-router-dom';
 import history from '../history';
 import Landing from './Landing/Landing';
 import PerformersListPage from './pages/PerformersListPage';
+import LogInPage from './pages/LogInPage';
 import RegisterPage from './pages/RegisterPage';
 import RegisterAdmirerPage from './pages/RegisterAdmirerPage';
 import RegisterPerformerPage from './pages/RegisterPerformerPage';
@@ -18,6 +19,7 @@ class App extends React.Component {
                         <Route path="/" exact component={Landing} />
                         <Route path="/map" exact component={MapPage} />
                         <Route path="/performers" exact component={PerformersListPage} />
+                        <Route path="/login" exact component={LogInPage} />
                         <Route path="/register" exact component={RegisterPage} />
                         <Route path="/register/admirer" exact component={RegisterAdmirerPage} />
                         <Route path="/register/performer" exact component={RegisterPerformerPage} />

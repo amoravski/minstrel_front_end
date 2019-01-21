@@ -16,18 +16,19 @@ class Sidebar extends React.Component {
                 <Link to="/" className="item">
                     <h3>Minstrel</h3>
                 </Link>
-                <Link to="/map" className="item">
+                <Link to="/map" className={`${this.props.map} item`}>
                     Map
                 </Link>
-                <Link to="/performers" className="item">
+                <Link to="/performers" className={`${this.props.performers} item`}>
                     Performers
+                </Link>
+                <Link to="/login" className="item">
+                    Log in
                 </Link>
                 <Link to="/register" className="item">
                     Register
                 </Link>
-                <Link to="/signin" className="item">
-                    SignIn
-                </Link>
+ 
                 <button className="close-button ui right floated icon button" onClick={this.toggleSidebar}>
                     <i className="close icon" ></i>
                 </button>

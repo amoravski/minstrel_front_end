@@ -9,7 +9,7 @@ const RegisterPerformerPage = () => {
         <div className="register ui">                                           
             <Header register="active" />
             <div className="register-types ui">
-                <RegisterPerformerForm className="register-types" />
+                <RegisterPerformerForm />
             </div>
         </div>
 
