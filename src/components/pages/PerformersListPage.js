@@ -7,7 +7,7 @@ const PerformersListPage = () => {
     return (
         <div>
             <PerformersList />
-            <Sidebar />
+            <Sidebar performers="active" />
         </div>
     );
 }

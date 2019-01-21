@@ -7,7 +7,7 @@ const App = () => {
     return (
         <div>
             <Map height="100vh" />
-            <Sidebar />
+            <Sidebar map="active" />
         </div>
     );
 }
