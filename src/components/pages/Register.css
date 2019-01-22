@@ -1,7 +1,10 @@
 .register {
+    height: 100vh;
+}
+
+.register-header {
     margin-left: 140px;
     margin-right: 140px;
-    height: 100vh;
 }
 
 .register-types {

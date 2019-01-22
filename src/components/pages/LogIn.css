@@ -1,9 +1,11 @@
-.log-in-page {
+.log-in-header {
     margin-left: 140px;
     margin-right: 140px;
-    height: 100vh;
 }
 
+.log-in-page {
+    height: 100vh;
+}
 .log-in-form {
     display: flex;
     align-content: center;

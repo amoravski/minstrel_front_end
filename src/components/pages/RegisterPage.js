@@ -8,7 +8,16 @@ const RegisterPage = () => {
     return (
         <div className="register ui">
             <Header register="active" />
-            <div className="register-types ui centered grid">
+            <div className="register-types ui centered computer only centered grid">
+                <div className="row">
+                    Sign up as
+                </div>
+                <div className="row">
+                    <Link className="ui button" to="/register/performer">Performer</Link>
+                    <Link className="ui button" to="/register/admirer">Admirer</Link>
+                </div>
+            </div>
+            <div className="register-types ui centered mobile only grid">
                 <div className="row">
                     Sign up as
                 </div>
