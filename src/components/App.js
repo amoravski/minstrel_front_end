@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route } from 'react-router-dom';
 
 import history from '../history';
-import Landing from './Landing/Landing';
+import LandingPage from './pages/LandingPage';
 import PerformersListPage from './pages/PerformersListPage';
 import LogInPage from './pages/LogInPage';
 import RegisterPage from './pages/RegisterPage';
@@ -16,7 +16,7 @@ class App extends React.Component {
             <div className="ui fluid container">
                 <Router history={history}>
                     <div>
-                        <Route path="/" exact component={Landing} />
+                        <Route path="/" exact component={LandingPage} />
                         <Route path="/map" exact component={MapPage} />
                         <Route path="/performers" exact component={PerformersListPage} />
                         <Route path="/login" exact component={LogInPage} />
