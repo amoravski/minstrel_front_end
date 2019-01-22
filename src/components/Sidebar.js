@@ -10,9 +10,9 @@ class Sidebar extends React.Component {
         this.setState({visible: !this.state.visible, first: false})
     };
 
-    renderMenu = () => {
+    renderMenu = aligned => {
         return (
-            <div className="ui inverted secondary menu">
+            <div className={`ui inverted secondary ${aligned} menu`}>
                 <Link to="/" className="item">
                     <h3>Minstrel</h3>
                 </Link>
@@ -40,16 +40,31 @@ class Sidebar extends React.Component {
 
         if (this.state.visible === true) {
             return (
-
-                <div className={`visible-sidebar ui visible wide sidebar ${this.state.first ? "" : "slide-in"}`} style={{ backgroundColor: "#000000", overflowX: "hidden"}}>
-                    {this.renderMenu()} 
+                <div>
+                <div className="ui computer only grid">
+                    <div className={`visible-sidebar ui visible wide sidebar ${this.state.first ? "" : "slide-in"}`} style={{ backgroundColor: "#000000", overflowX: "hidden"}}>
+                        {this.renderMenu("horizontal")} 
+                    </div>
+                </div>
+                <div className="ui mobile only grid">
+                    <div className={`visible-sidebar ui visible wide sidebar ${this.state.first ? "" : "slide-in"}`} style={{ backgroundColor: "#000000", overflowX: "hidden"}}>
+                        {this.renderMenu("vertical")} 
+                    </div>
+                </div>
                 </div>
             );
         }
         return (
             <div>
+                <div className="ui computer only grid">
                 <div className="ui visible slide-out wide sidebar" style={{ backgroundColor: "#000000", overflowX: "hidden"}}>
-                    {this.renderMenu()} 
+                    {this.renderMenu("horizontal")} 
+                </div> 
+                </div>
+                <div className="ui mobile only grid">
+                <div className="ui visible slide-out wide sidebar" style={{ backgroundColor: "#000000", overflowX: "hidden"}}>
+                    {this.renderMenu("vertical")} 
+                </div> 
                 </div>
                 <button className="open-button ui icon basic button" onClick={this.toggleSidebar}>
                     <i className="angle right icon" ></i>
