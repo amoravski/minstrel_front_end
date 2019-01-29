@@ -5,7 +5,23 @@ import { Field, reduxForm } from 'redux-form';
 import { registerPerformer } from '../../actions';
 
 class RegisterPerformerForm extends React.Component {
-    renderError({ error, touched }) {
+    state = { key: Math.random() }
+
+    componentDidUpdate (prevProps) {
+        if(prevProps.errors !== this.props.errors) {
+            this.setState({ key: Math.random() })
+        }
+    }
+
+    renderError({ error, touched }, apiError) {
+        if (apiError) {
+            return ( 
+                <div className="ui error message">
+                    <div className="header">{apiError}</div>
+                </div>
+            );
+
+        }
         if (touched && error) {
             return (
                 <div className="ui error message">
@@ -16,12 +32,12 @@ class RegisterPerformerForm extends React.Component {
     }
 
     renderInput = ({ input, label, meta}) => {
-        const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
+        const className = `field ${(meta.error && meta.touched) || this.props.errors[input.name] ? 'error' : ''}`;
         return (
             <div className={className}>
                 <label>{label}</label>
                 <input {...input} />
-                {this.renderError(meta)}
+                {this.renderError(meta, this.props.errors[input.name])}
             </div>
         );
     }
@@ -41,36 +57,42 @@ class RegisterPerformerForm extends React.Component {
                     name="username"
                     component={this.renderInput}
                     label="Enter name"
+                    key={this.state.key}
                 />
                 <Field 
                     className="field"
                     name="email"
                     component={this.renderInput}
                     label="Enter email"
+                    key={this.state.key + 1}
                 />
                 <Field 
                     className="field"
                     name="password"
                     component={this.renderInput}
                     label="Enter password"
+                    key={this.state.key + 2}
                 />
                 <Field 
                     className="field"
-                    name="password-repeat"
+                    name="password_repeat"
                     component={this.renderInput}
                     label="Repeat password"
+                    key={this.state.key + 3}
                 />
                 <Field 
                     className="field"
                     name="categories"
                     component={this.renderInput}
                     label="Categories"
+                    key={this.state.key + 4}
                 />
                  <Field 
                     className="field"
                     name="location"
                     component={this.renderInput}
                     label="Location"
+                    key={this.state.key + 5}
                 />
                 <button className="ui button primary">Submit</button>
             </form>
@@ -80,8 +102,6 @@ class RegisterPerformerForm extends React.Component {
 
 const validate = formValues => {
     const errors ={};
-
-    console.log(formValues);
 
     if(!formValues.username) {
         errors.username = "You must enter a username";
@@ -112,4 +132,8 @@ const form = reduxForm({
     validate
 })(RegisterPerformerForm);
 
-export default connect(null, { registerPerformer })(form);
+const mapStateToProps = state => {
+    return { errors: state.register };
+}
+
+export default connect(mapStateToProps, { registerPerformer })(form);

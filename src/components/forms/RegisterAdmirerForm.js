@@ -5,7 +5,23 @@ import { Field, reduxForm } from 'redux-form';
 import { registerAdmirer } from '../../actions';
 
 class RegisterAdmirerForm extends React.Component {
-    renderError({ error, touched }) {
+    state = { key: Math.random() }
+
+    componentDidUpdate (prevProps) {
+        if(prevProps.errors !== this.props.errors) {
+            this.setState({ key: Math.random() })
+        }
+    }
+
+    renderError({ error, touched }, apiError) {
+        if (apiError) {
+            return (
+                <div className="ui error message">
+                    <div className="header">{apiError}</div>
+                </div>
+            );
+
+        }
         if (touched && error) {
             return (
                 <div className="ui error message">
@@ -16,12 +32,12 @@ class RegisterAdmirerForm extends React.Component {
     }
 
     renderInput = ({ input, label, meta}) => {
-        const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
+        const className = `field ${(meta.error && meta.touched) || this.props.errors[input.name] ? 'error' : ''}`;
         return (
             <div className={className}>
                 <label>{label}</label>
                 <input {...input} />
-                {this.renderError(meta)}
+                {this.renderError(meta, this.props.errors[input.name])}
             </div>
         );
     }
@@ -36,23 +52,26 @@ class RegisterAdmirerForm extends React.Component {
                 onSubmit={this.props.handleSubmit(this.onSubmit)}
                 className="ui form error"
             >
-                <Field 
+                <Field
                     className="field"
                     name="username"
                     component={this.renderInput}
                     label="Enter name"
+                    key={this.state.key} 
                 />
                 <Field 
                     className="field"
                     name="email"
                     component={this.renderInput}
                     label="Enter email"
+                    key={this.state.key + 1} 
                 />
                 <Field 
                     className="field"
                     name="password"
                     component={this.renderInput}
                     label="Enter password"
+                    key={this.state.key + 2} 
                 />
                 <Field 
                     className="field"
@@ -60,12 +79,14 @@ class RegisterAdmirerForm extends React.Component {
                     component={this.renderInput}
                     label="Repeat password"
                     type="password"
+                    key={this.state.key + 3} 
                 />
                 <Field 
                     className="field"
-                    name="preferred_categories"
+                    name="categories"
                     component={this.renderInput}
                     label="Category placeholder"
+                    key={this.state.key + 4} 
                 />
                 <button className="ui button primary">Submit</button>
             </form>
@@ -104,4 +125,9 @@ const form = reduxForm({
     validate
 })(RegisterAdmirerForm);
 
-export default connect(null, { registerAdmirer })(form);
+const mapStateToProps = state => {
+    return { errors: state.register };
+}
+
+
+export default connect(mapStateToProps, { registerAdmirer })(form);
