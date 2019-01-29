@@ -1,9 +1,13 @@
-export default ( state= {}, action ) => {
+export default ( state={}, action ) => {
     switch (action.type) {
-        case 'CREATE_PERFORMER':
-            return state;
-        case 'CREATE_ADMIRER':
-            return state;
+        case 'RESET_ERROR':
+            return {};
+        case 'ERROR_USERNAME':
+            return {...state, username: action.payload};
+        case 'ERROR_EMAIL':
+            return {...state, email: action.payload};
+        case 'ERROR_CATEGORIES':
+            return {...state, categories: action.payload};
         default:
             return state;
     }
