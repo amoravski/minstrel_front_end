@@ -1,6 +1,6 @@
 import React from 'react';
 
-import minstrel_api from '../apis/minstrel_api';
+import minstrel_api from '../../apis/minstrel_api';
 import PerformersCard from './PerformersCard';
 import './PerformersList.css';
 
@@ -14,7 +14,6 @@ class PerformersList extends React.Component {
 
     getPerformers = async () => {
         const resp = await minstrel_api.get('/performer')
-        console.log(resp);
         this.setState({
             performers: resp.data.performers
         });
@@ -25,6 +24,7 @@ class PerformersList extends React.Component {
             return (
                 <PerformersCard
                     name={performer.username}
+                    key={performer.username}
                     location={performer.location}
                 />
             );
