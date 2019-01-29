@@ -47,7 +47,7 @@ const Footer = () => {
                 </div>
                 <div className="three wide column">
                     <div className="ui secondary vertical menu">
-                        <h7>Partners</h7>
+                        <h6>Partners</h6>
                         <div className="right aligned content  menu">
                             <p className="item">Zithor</p>
                             <p className="item">Vzaaaz</p>

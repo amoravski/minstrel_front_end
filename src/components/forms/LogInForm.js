@@ -5,7 +5,22 @@ import { Field, reduxForm } from 'redux-form';
 import { logIn } from '../../actions';
 
 class LogInForm extends React.Component {
-    renderError({ error, touched }) {
+    state = { key: Math.random() }
+
+    componentDidUpdate (prevProps) {
+        if(prevProps.login.error !== this.props.login.error) {
+            this.setState({ key: Math.random() })
+        }
+    }
+
+    renderError({ error, touched }, apiError) {
+        if (apiError) {
+            return (
+                <div className="ui error message">
+                    <div className="header">{apiError}</div>
+                </div>
+            );
+        }
         if (touched && error) {
             return (
                 <div className="ui error message">
@@ -16,12 +31,12 @@ class LogInForm extends React.Component {
     }
 
     renderInput = ({ input, label, meta}) => {
-        const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
+        const className = `field ${(meta.error && meta.touched) || this.props.login.error ? 'error' : ''}`;
         return (
             <div className={className}>
                 <label>{label}</label>
                 <input {...input} />
-                {this.renderError(meta)}
+                {this.renderError(meta, this.props.login.error)}
             </div>
         );
     }
@@ -41,11 +56,13 @@ class LogInForm extends React.Component {
                     name="email"
                     component={this.renderInput}
                     label="Enter email"
+                    key={this.state.key}
                 />
                 <Field
                     name="password"
                     component={this.renderInput}
                     label="Enter password"
+                    key={this.state.key + 1}
                 />
                 <button className="ui button primary">Submit</button>
             </form>
@@ -73,4 +90,9 @@ const form = reduxForm({
     validate
 })(LogInForm);
 
-export default connect(null, { logIn })(form);
+const mapStateToProps = state => {
+    return { login: state.login };
+}
+
+
+export default connect(mapStateToProps, { logIn })(form);

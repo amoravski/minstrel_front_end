@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Sidebar from '../Sidebar';
-import PerformersList from '../PerformersList';
+import PerformersList from '../performer_list/PerformersList';
 
 const PerformersListPage = () => {
     return (
