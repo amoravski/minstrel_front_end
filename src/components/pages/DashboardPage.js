@@ -5,7 +5,7 @@ const Dashboard = () => {
     return (
         <div>
             Dashboard
-            <Sidebar />
+            <Sidebar dashboard="active"/>
         </div>
     );
 }

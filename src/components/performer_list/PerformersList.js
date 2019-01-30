@@ -6,7 +6,7 @@ import './PerformersList.css';
 
 
 class PerformersList extends React.Component {
-    state = { performers: [] }
+    state = { performers: [] };
     
     componentDidMount() {
         this.getPerformers();

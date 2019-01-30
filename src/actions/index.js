@@ -58,3 +58,9 @@ export const logIn = formValues => async dispatch => {
         }
     }
 };
+
+export const logOut = jwt => async dispatch => {
+    const resp = await minstrel_api.post('/logout', jwt);
+    dispatch({ type: "LOG_OUT" });
+    history.push('/');
+}
