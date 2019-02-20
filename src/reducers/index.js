@@ -6,6 +6,7 @@ import storage from 'redux-persist/lib/storage';
 import registerReducer from './registerReducer';
 import userReducer from './userReducer';
 import loginReducer from './loginReducer';
+import sidebarReducer from './sidebarReducer';
 
 const persistConfig = {
     key: 'user',
@@ -18,5 +19,6 @@ export default combineReducers({
     form: formReducer,
     register: registerReducer,
     user: persistedUser,
-    login: loginReducer
+    login: loginReducer,
+    sidebar: sidebarReducer
 });

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { RouterSignedIn, RouterSignedOut } from './Router';
+import './App.css';
 
 class App extends React.Component {
     render () {

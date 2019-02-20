@@ -26,7 +26,7 @@ export default class SimpleExample extends Component<{}, State> {
     const position = [this.state.lat, this.state.lng]
       return (
     <div style={{height: `${this.props.height}`}}>
-      <Map center={position} zoom={this.state.zoom} style={{height: "100%"}}>
+      <Map dragging={this.props.interact} scrollWheelZoom={this.props.interact} center={position} zoom={this.state.zoom} style={{height: "100%"}}>
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

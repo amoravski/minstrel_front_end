@@ -60,7 +60,25 @@ export const logIn = formValues => async dispatch => {
 };
 
 export const logOut = jwt => async dispatch => {
-    const resp = await minstrel_api.post('/logout', jwt);
+    await minstrel_api.post('/logout', jwt);
     dispatch({ type: "LOG_OUT" });
     history.push('/');
 }
+
+export const openSidebar = () => {
+    return {
+        type: 'OPEN_SIDEBAR'
+    };
+};
+
+export const closeSidebar = () => {
+    return {
+        type: 'CLOSE_SIDEBAR'
+    };
+};
+
+export const initSidebar = () => {
+    return {
+        type: 'INIT_SIDEBAR'
+    };
+};
