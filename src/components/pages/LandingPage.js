@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Leaflet from 'leaflet'
 
 import Map from '../Map';
@@ -23,7 +24,6 @@ class Landing extends React.Component {
                         <LandingFirst />
                         <LandingSecond />
                         <LandingThird />
-                        <LandingThird />
                     </div>
                 </div>
                 <div>
@@ -31,11 +31,16 @@ class Landing extends React.Component {
                         <LandingFirst />
                         <LandingSecond />
                         <LandingThird />
-                        <LandingThird />
                     </div>
                 </div>
-                <div style={{ marginBottom: "20vh"}}>
-                        <Map height="80vh" />
+                <div style={{ marginBottom: "20vh", width: "80%", marginLeft: "auto", marginRight: "auto", position: "relative"}}>
+                        <div className="circular ui button" style={{ marginBottom: "0vh", zIndex: "20"}}>
+                            <Link to="/map">
+                                    Check our map
+                            </Link>
+                        </div>
+                        <Map interact={false} height="80vh" />
+                        
                 </div>
             </div>
                 <Footer />
