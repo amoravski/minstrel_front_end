@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import minstrel_api from '../../apis/minstrel_api';
 import PerformersCard from './PerformersCard';
@@ -32,8 +33,24 @@ class PerformersList extends React.Component {
     }
 
     render () {
+        var className="performers-list push-out";
+        if (this.props.user.signedIn) {
+            className="performers-list push-out-signedIn";
+        }
+        if (this.props.sidebar.visible) {
+            className="performers-list performers-pushed push-in";
+        }
+        if (this.props.sidebar.visible && this.props.user.signedIn) {    
+            className="performers-list performers-pushed-signedIn push-in-signedIn";
+        }
+        if (this.props.sidebar.first) {
+            className="performers-list performers-pushed"
+        }
+        if (this.props.sidebar.first && this.props.user.signedIn) {
+            className="performers-list performers-pushed-signedIn";
+        }
         return (
-            <div className="performers-list pusher">
+            <div className={className}>
                 <div className="performers-cards ui center aligned relaxed grid noMargin">
                     {this.renderCards()}
                 </div>
@@ -42,4 +59,8 @@ class PerformersList extends React.Component {
     }
 }
 
-export default PerformersList;
+const mapStateToProps = state => {
+    return { sidebar: state.sidebar, user: state.user };
+}
+
+export default connect(mapStateToProps, {})(PerformersList);

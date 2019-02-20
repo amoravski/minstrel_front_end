@@ -6,3 +6,46 @@
     overflow-y:auto;
     white-space:nowrap;
 }
+
+.performers-pushed {
+    margin-left: 37%;
+}
+
+.performers-pushed-signedIn {
+    margin-left: 15%;
+}
+
+.push-in {
+    animation: push-in 0.5s forwards;
+    -webkit-animation: push-in 0.5s forwards;
+}
+
+.push-out {
+    animation: push-out 0.5s forwards;
+    -webkit-animation: push-out 0.5s forwards;
+}
+
+@keyframes push-in {
+    0% { transform: translateX(-37%); }
+}
+
+@keyframes push-out {
+    0% { transform: translateX(37%); }
+}
+.push-in-signedIn {
+    animation: push-in-signedIn 0.5s forwards;
+    -webkit-animation: push-in-signedIn 0.5s forwards;
+}
+
+.push-out-signedIn {
+    animation: push-out-signedIn 0.5s forwards;
+    -webkit-animation: push-out-signedIn 0.5s forwards;
+}
+
+@keyframes push-in-signedIn {
+    0% { transform: translateX(-15%); }
+}
+
+@keyframes push-out-signedIn {
+    0% { transform: translateX(15%); }
+}
