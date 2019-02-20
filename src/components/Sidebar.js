@@ -2,62 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { openSidebar, closeSidebar, initSidebar } from '../actions';
+
 import './Sidebar.css';
 
-class SidebarTemplate extends React.Component {
-    state = { visible: true, first:true };
+class Sidebar extends React.Component {
+    
+    componentDidMount () {
+        this.props.initSidebar();
+    }
 
     toggleSidebar = () => {
-        this.setState({visible: !this.state.visible, first: false})
-    };
-
-    
-
-    renderIfVisible = () => {
-
-        if (this.state.visible === true) {
-            return (
-                <div>
-                <div className="ui computer only grid">
-                    <div className={`visible-sidebar ui visible wide sidebar ${this.state.first ? "" : "slide-in"}`} style={{ backgroundColor: "#000000", overflowX: "hidden"}}>
-                        {this.props.renderMenu("horizontal")} 
-                    </div>
-                </div>
-                <div className="ui mobile only grid">
-                    <div className={`visible-sidebar ui visible wide sidebar ${this.state.first ? "" : "slide-in"}`} style={{ backgroundColor: "#000000", overflowX: "hidden"}}>
-                        {this.props.renderMenu("vertical")} 
-                    </div>
-                </div>
-                </div>
-            );
+        if (this.props.sidebar.visible) {
+            this.props.closeSidebar();
         }
-        return (
-            <div>
-                <div className="ui computer only grid">
-                <div className="ui visible slide-out wide sidebar" style={{ backgroundColor: "#000000", overflowX: "hidden"}}>
-                    {this.props.renderMenu("horizontal")} 
-                </div> 
-                </div>
-                <div className="ui mobile only grid">
-                <div className="ui visible slide-out wide sidebar" style={{ backgroundColor: "#000000", overflowX: "hidden"}}>
-                    {this.props.renderMenu("vertical")} 
-                </div> 
-                </div>
-                <button className="open-button ui icon basic button" onClick={this.toggleSidebar}>
-                    <i className="angle right icon" ></i>
-                </button>
-            </div>
-        );
+        else {
+            this.props.openSidebar();
+        }
     };
-
-    render () {
-        return (
-                this.renderIfVisible()
-        );
-    }
-}
-
-class Sidebar extends React.Component {
 
     renderSignedOutMenu = aligned => {
         return (
@@ -66,16 +28,16 @@ class Sidebar extends React.Component {
                     <h3>Minstrel</h3>
                 </Link>
                 <Link to="/map" className={`${this.props.map} item`}>
-                    Map
+                    MAP
                 </Link>
                 <Link to="/performers" className={`${this.props.performers} item`}>
-                    Performers
+                    PERFORMERS
                 </Link>
                 <Link to="/login" className="item">
-                    Log in
+                    LOG IN
                 </Link>
                 <Link to="/register" className="item">
-                    Register
+                    SIGN UP
                 </Link>
  
                 <button className="close-button ui right floated icon button" onClick={this.toggleSidebar}>
@@ -90,22 +52,22 @@ class Sidebar extends React.Component {
             <div className={`ui inverted secondary vertical menu`}>
                 <h3 className="item">{this.props.user.name}</h3>
                 <Link to="/" className={`${this.props.dashboard} item`}>
-                    Dashboard
+                    DASHBOARD
                 </Link>
                 <Link to="/map" className={`${this.props.map} item`}>
-                    Map
+                    MAP
                 </Link>
                 <Link to="/performers" className={`${this.props.performers} item`}>
-                    Performers
+                    PERFORMERS
                 </Link>
                 <Link to="/performances" className={`${this.props.performances} item`}>
-                    Performances
+                    PERFORMANCES
                 </Link>
                  <Link to="/offers" className={`${this.props.offers} item`}>
-                    Offers
+                    OFFERS
                 </Link>
                 <Link to="/logout" className="item">
-                    Log out
+                    LOG OUT
                 </Link>
 
                 <button className="close-button ui right floated icon button" onClick={this.toggleSidebar}>
@@ -115,18 +77,54 @@ class Sidebar extends React.Component {
         );
     }
 
+    renderIfVisible = ( renderMenu ) => {
+
+        if (this.props.sidebar.visible === true) {
+            return (
+                <div>
+                <div className="ui computer only grid">
+                    <div className={`sidebar-main visible-sidebar ui visible wide sidebar ${this.props.sidebar.first ? "" : "slide-in"}`}>
+                        {renderMenu("horizontal")} 
+                    </div>
+                </div>
+                <div className="ui mobile only grid">
+                    <div className={`sidebar-main visible-sidebar ui visible wide sidebar ${this.props.sidebar.first ? "" : "slide-in"}`}>
+                        {renderMenu("vertical")} 
+                    </div>
+                </div>
+                </div>
+            );
+        }
+        return (
+            <div>
+                <div className="ui computer only grid">
+                <div className="sidebar-main ui visible slide-out wide sidebar">
+                    {renderMenu("horizontal")} 
+                </div> 
+                </div>
+                <div className="ui mobile only grid">
+                <div className="sidebar-main ui visible slide-out wide sidebar">
+                    {renderMenu("vertical")} 
+                </div> 
+                </div>
+                <button className="open-button ui icon basic button" onClick={this.toggleSidebar}>
+                    <i className="angle right icon" ></i>
+                </button>
+            </div>
+        );
+    };
 
     render () {
         if (this.props.user.signedIn) {
-            return <SidebarTemplate renderMenu={this.renderSignedInMenu} />
+            return this.renderIfVisible(this.renderSignedInMenu)
         }
         
-        return <SidebarTemplate renderMenu={this.renderSignedOutMenu} />
+        return this.renderIfVisible(this.renderSignedOutMenu)
     }
 }
 
 const mapStateToProps = state => {
-    return { user: state.user };
+    return { user: state.user, sidebar: state.sidebar };
 }
 
-export default connect(mapStateToProps, {})(Sidebar);
+export default connect(mapStateToProps, { openSidebar, closeSidebar, initSidebar })(Sidebar);

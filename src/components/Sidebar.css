@@ -1,3 +1,7 @@
+.sidebar-main {
+  background: #2DE1C2;
+  overflowX: hidden;
+}
 .open-button {
   position: fixed; /* or absolute */
   top: 10%;
