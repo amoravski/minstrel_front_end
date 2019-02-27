@@ -1,5 +1,8 @@
 import minstrel_api from '../apis/minstrel_api';
+import mapquest_api from '../apis/mapquest';
 import history from '../history';
+
+const mapquest_key = "DvALSLnxRSCga8sRwo30Fpep08reiHed";  
 
 export const registerAdmirer = formValues => async dispatch => {
     try {
@@ -60,9 +63,33 @@ export const logIn = formValues => async dispatch => {
 };
 
 export const logOut = jwt => async dispatch => {
-    await minstrel_api.post('/logout', jwt);
+    await minstrel_api.delete('/logout', {
+        
+        headers: {
+            Authorization: 'Bearer ' + jwt
+        }
+    });
     dispatch({ type: "LOG_OUT" });
     history.push('/');
+}
+
+export const geocode = address => async dispatch => {
+    const resp = await mapquest_api.get(`geocoding/v1/address?key=${mapquest_key}&location=${address}`)
+    
+    dispatch({
+        type: 'GEOCODE',
+        payload: resp.results[0].locations[0].latLng
+    });
+};
+
+export const reverseGeocode = latLong => async dispatch => {
+    const resp = await mapquest_api.get(`http://open.mapquestapi.com/geocoding/v1/reverse?key=${mapquest_key}&location=${latLong}`)
+
+    console.log(resp.data.results)
+    dispatch({
+        type: 'REVERSE_GEOCODE',
+        payload: resp.data.results[0].locations[0]
+    });
 }
 
 export const openSidebar = () => {

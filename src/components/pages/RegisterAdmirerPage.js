@@ -6,7 +6,7 @@ import RegisterAdmirerForm from '../forms/RegisterAdmirerForm';
 
 const RegisterAdmirerPage = () => {
     return (
-        <div className="register ui">
+        <div className="register ui" style={{ position: "relative" }}>
             <Header register="active" />
             <div className="register-types ui computer only centered grid">
                 <RegisterAdmirerForm />

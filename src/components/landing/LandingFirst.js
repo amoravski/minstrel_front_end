@@ -7,11 +7,11 @@ const LandingFirst = () => {
             <div className="landing-first ui">
                 <div className="ui grid" >
                     <div className="row">
-                        <div className="landing-content eight wide column">
-                            <h1 className="first-header ui"><b>The new face of street performing</b></h1>
-                            <p className="ui left aligned text">Minstrel is a platform for street performers and their admirers, made for the purpose of growing and maintaing and active community. Here at Minstrel your passion for performance is our priority!</p>
+                        <div className="landing-content ten wide column">
+                            <div className="first-header">The new face of street performing</div>
+                            <div className="first-text ui left aligned text">Minstrel is a platform for street performers and their admirers, made for the purpose of growing and maintaing and active community. Here at Minstrel your passion for performance is our priority!</div>
                         </div>
-                        <div className="landing-image computer only eight wide column">
+                        <div className="landing-image computer only six wide column">
                             <img alt="" src="https://i.ytimg.com/vi/m5d1FlSeF-M/maxresdefault.jpg" className="ui large bordered rounded image" />
                         </div>
                     </div>

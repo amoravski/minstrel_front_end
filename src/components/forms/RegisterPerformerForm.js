@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 
 import { registerPerformer } from '../../actions';
+import SelectMap from '../map/SelectMap';
 
 class RegisterPerformerForm extends React.Component {
     state = { key: Math.random() }
@@ -31,18 +32,19 @@ class RegisterPerformerForm extends React.Component {
         }
     }
 
-    renderInput = ({ input, label, meta}) => {
+    renderInput = ({ input, label, meta, type}) => {
         const className = `field ${(meta.error && meta.touched) || this.props.errors[input.name] ? 'error' : ''}`;
         return (
             <div className={className}>
                 <label>{label}</label>
-                <input {...input} />
+                <input {...input} type={type}/>
                 {this.renderError(meta, this.props.errors[input.name])}
             </div>
         );
     }
 
     onSubmit = formValues => {
+        console.log(formValues);
         this.props.registerPerformer(formValues);
     }
 
@@ -70,6 +72,7 @@ class RegisterPerformerForm extends React.Component {
                     className="field"
                     name="password"
                     component={this.renderInput}
+                    type="password"
                     label="Enter password"
                     key={this.state.key + 2}
                 />
@@ -77,6 +80,7 @@ class RegisterPerformerForm extends React.Component {
                     className="field"
                     name="password_repeat"
                     component={this.renderInput}
+                    type="password"
                     label="Repeat password"
                     key={this.state.key + 3}
                 />
@@ -87,11 +91,12 @@ class RegisterPerformerForm extends React.Component {
                     label="Categories"
                     key={this.state.key + 4}
                 />
-                 <Field 
+                <Field                                                                        
                     className="field"
-                    name="location"
-                    component={this.renderInput}
-                    label="Location"
+                    name="map"
+                    component={SelectMap}
+                    props={{height: "50vh", interact: "true"}}
+                    label="Category placeholder"
                     key={this.state.key + 5}
                 />
                 <button className="ui button primary">Submit</button>

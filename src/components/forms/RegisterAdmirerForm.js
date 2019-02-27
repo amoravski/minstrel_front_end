@@ -31,12 +31,12 @@ class RegisterAdmirerForm extends React.Component {
         }
     }
 
-    renderInput = ({ input, label, meta}) => {
+    renderInput = ({ input, label, meta, type}) => {
         const className = `field ${(meta.error && meta.touched) || this.props.errors[input.name] ? 'error' : ''}`;
         return (
             <div className={className}>
                 <label>{label}</label>
-                <input {...input} />
+                <input {...input} type={type} />
                 {this.renderError(meta, this.props.errors[input.name])}
             </div>
         );
@@ -71,6 +71,7 @@ class RegisterAdmirerForm extends React.Component {
                     name="password"
                     component={this.renderInput}
                     label="Enter password"
+                    type="password"
                     key={this.state.key + 2} 
                 />
                 <Field 

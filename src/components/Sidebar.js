@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { openSidebar, closeSidebar, initSidebar } from '../actions';
+import LogOutButton from './LogOutButton';
 
 import './Sidebar.css';
 
@@ -66,9 +67,9 @@ class Sidebar extends React.Component {
                  <Link to="/offers" className={`${this.props.offers} item`}>
                     OFFERS
                 </Link>
-                <Link to="/logout" className="item">
-                    LOG OUT
-                </Link>
+                <div className="item">
+                    <LogOutButton />
+                </div>
 
                 <button className="close-button ui right floated icon button" onClick={this.toggleSidebar}>
                     <i className="close icon" ></i>
