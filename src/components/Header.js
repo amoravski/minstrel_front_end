@@ -5,24 +5,26 @@ import './Header.css';
 
 const Header = props => {
     return (
-        <div>
+        <div className="main-header">
             <div className="ui secondary menu computer only grid" style={{marginLeft:"140px", marginRight:"140px"}}>
                 <div className="row">
                 <Link to="/" className={`${props.landing} item`}>LOGO</Link>
                 <div className="right menu">
                     <Link to="/map" className="item">
-                        <b>MAP</b>
+                        MAP
                     </Link>
                     <Link to="/performers" className="item">
-                        <b>PERFORMERS</b>
+                        PERFORMERS
                     </Link>
                     <Link to="/login" className={`${props.login} item`}>
-                        <b>LOGIN</b>
+                        LOGIN
                     </Link>
-                        <div className="sign-up circular ui button">
+                        <div className="item">
+                            <div className="ui sign-up circular button">
                             <Link to="/register" className="sign-up-text">
                                 SIGN UP
                             </Link>
+                            </div>
                         </div>
                 </div>
                 </div>

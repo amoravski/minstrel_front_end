@@ -1,8 +1,5 @@
-
-// @flow
-
-import React, { Component } from 'react'
-import { Map, TileLayer } from 'react-leaflet'
+import React, { Component } from 'react';
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
 type State = {
   lat: number,
@@ -10,7 +7,12 @@ type State = {
   zoom: number,
 }
 
-export default class SimpleExample extends Component<{}, State> {
+const markers = [
+    { position: [42.5, 23.3], text: "Music" },
+    { position: [42.6, 23.4], text: "Dances" }
+];
+
+export default class DefaultMap extends Component<{}, State> {
   state = {
     lat: 42.698334,
     lng: 23.319941,
@@ -30,7 +32,14 @@ export default class SimpleExample extends Component<{}, State> {
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+        />
+        {markers.map(marker => 
+        <Marker position={marker.position}>
+          <Popup>
+            <span>{marker.text}</span>
+          </Popup>
+        </Marker>
+        )}
       </Map>
     </div>
     )

@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Leaflet from 'leaflet'
 
-import Map from '../Map';
+import Map from '../map/Map';
 import Header from '../Header';
 import Footer from '../Footer';
 import './LandingPage.css';
 import LandingFirst from '../landing/LandingFirst';
 import LandingSecond from '../landing/LandingSecond';
+import LandingSecondServices from '../landing/LandingSecondServices';
 import LandingThird from '../landing/LandingThird';
 
 Leaflet.Icon.Default.imagePath =
@@ -23,6 +24,7 @@ class Landing extends React.Component {
                     <div className="ui computer only grid">
                         <LandingFirst />
                         <LandingSecond />
+                        <LandingSecondServices />
                         <LandingThird />
                     </div>
                 </div>
@@ -30,6 +32,7 @@ class Landing extends React.Component {
                     <div className="ui mobile only grid">
                         <LandingFirst />
                         <LandingSecond />
+                        <LandingSecondServices />
                         <LandingThird />
                     </div>
                 </div>
