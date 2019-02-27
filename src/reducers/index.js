@@ -7,6 +7,7 @@ import registerReducer from './registerReducer';
 import userReducer from './userReducer';
 import loginReducer from './loginReducer';
 import sidebarReducer from './sidebarReducer';
+import geocodeReducer from './geocodeReducer';
 
 const persistConfig = {
     key: 'user',
@@ -20,5 +21,6 @@ export default combineReducers({
     register: registerReducer,
     user: persistedUser,
     login: loginReducer,
-    sidebar: sidebarReducer
+    sidebar: sidebarReducer,
+    geocode: geocodeReducer
 });
