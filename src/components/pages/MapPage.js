@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Sidebar from '../Sidebar';
-import Map from '../Map';
+import Map from '../map/Map';
 
 const App = () => {
     return (
