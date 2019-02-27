@@ -16,3 +16,14 @@
     position: relative;
     flex-wrap: wrap;
 }
+
+.third-card-header {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 45px;
+}
+
+.third-card-text {
+    font-size: 30px;
+    line-height: 45px;
+}

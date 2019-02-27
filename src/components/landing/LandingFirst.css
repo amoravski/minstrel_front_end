@@ -1,6 +1,6 @@
 .landing-first {
     display: flex;
-    align-content: center;
+    margin-top: 10%;
     flex-wrap: wrap;
     height: 96vh;
     justify-content: space-between;
@@ -17,9 +17,13 @@
 }
 
 .first-header {
+    font-weight: 700;
+    font-size: 65px;
+    line-height: 80px;
     color: #F25F5C
 }
 
 .first-text {
-    color: #264348
+    font-size: 20px;
+    line-height: 30px;
 }

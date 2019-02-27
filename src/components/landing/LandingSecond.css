@@ -11,3 +11,14 @@
     position: relative;
     flex-wrap: wrap;
 }         
+
+.card-header {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 45px;
+}
+
+.card-text {
+    font-size: 30px;
+    line-height: 45px;
+}
