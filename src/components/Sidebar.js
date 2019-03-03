@@ -8,8 +8,8 @@ import LogOutButton from './LogOutButton';
 import './Sidebar.css';
 
 class Sidebar extends React.Component {
-    
-    componentDidMount () {
+
+    componentDidMount() {
         this.props.initSidebar();
     }
 
@@ -40,7 +40,7 @@ class Sidebar extends React.Component {
                 <Link to="/register" className="item">
                     SIGN UP
                 </Link>
- 
+
                 <button className="close-button ui right floated icon button" onClick={this.toggleSidebar}>
                     <i className="close icon" ></i>
                 </button>
@@ -64,7 +64,7 @@ class Sidebar extends React.Component {
                 <Link to="/performances" className={`${this.props.performances} item`}>
                     PERFORMANCES
                 </Link>
-                 <Link to="/offers" className={`${this.props.offers} item`}>
+                <Link to="/offers" className={`${this.props.offers} item`}>
                     OFFERS
                 </Link>
                 <div className="item">
@@ -78,35 +78,35 @@ class Sidebar extends React.Component {
         );
     }
 
-    renderIfVisible = ( renderMenu ) => {
+    renderIfVisible = (renderMenu) => {
 
         if (this.props.sidebar.visible === true) {
             return (
                 <div>
-                <div className="ui computer only grid">
-                    <div className={`sidebar-main visible-sidebar ui visible wide sidebar ${this.props.sidebar.first ? "" : "slide-in"}`}>
-                        {renderMenu("horizontal")} 
+                    <div className="ui computer only grid">
+                        <div className={`sidebar-main visible-sidebar ui visible wide sidebar ${this.props.sidebar.first ? "" : "slide-in"}`}>
+                            {renderMenu("horizontal")}
+                        </div>
                     </div>
-                </div>
-                <div className="ui mobile only grid">
-                    <div className={`sidebar-main visible-sidebar ui visible wide sidebar ${this.props.sidebar.first ? "" : "slide-in"}`}>
-                        {renderMenu("vertical")} 
+                    <div className="ui mobile only grid">
+                        <div className={`sidebar-main visible-sidebar ui visible wide sidebar ${this.props.sidebar.first ? "" : "slide-in"}`}>
+                            {renderMenu("vertical")}
+                        </div>
                     </div>
-                </div>
                 </div>
             );
         }
         return (
             <div>
                 <div className="ui computer only grid">
-                <div className="sidebar-main ui visible slide-out wide sidebar">
-                    {renderMenu("horizontal")} 
-                </div> 
+                    <div className="sidebar-main ui visible slide-out wide sidebar">
+                        {renderMenu("horizontal")}
+                    </div>
                 </div>
                 <div className="ui mobile only grid">
-                <div className="sidebar-main ui visible slide-out wide sidebar">
-                    {renderMenu("vertical")} 
-                </div> 
+                    <div className="sidebar-main ui visible slide-out wide sidebar">
+                        {renderMenu("vertical")}
+                    </div>
                 </div>
                 <button className="open-button ui icon basic button" onClick={this.toggleSidebar}>
                     <i className="angle right icon" ></i>
@@ -115,11 +115,11 @@ class Sidebar extends React.Component {
         );
     };
 
-    render () {
+    render() {
         if (this.props.user.signedIn) {
             return this.renderIfVisible(this.renderSignedInMenu)
         }
-        
+
         return this.renderIfVisible(this.renderSignedOutMenu)
     }
 }

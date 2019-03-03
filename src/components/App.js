@@ -6,8 +6,12 @@ import strings from '../strings';
 import './App.css';
 
 class App extends React.Component {
-    render () {
+    getLanguageFromState() {
         strings.setLanguage(this.props.language);
+    }
+
+    render() {
+        this.getLanguageFromState();
         if (this.props.user.signedIn) {
             return (
                 <RouterSignedIn />

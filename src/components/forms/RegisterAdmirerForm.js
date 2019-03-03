@@ -7,8 +7,8 @@ import { registerAdmirer } from '../../actions';
 class RegisterAdmirerForm extends React.Component {
     state = { key: Math.random() }
 
-    componentDidUpdate (prevProps) {
-        if(prevProps.errors !== this.props.errors) {
+    componentDidUpdate(prevProps) {
+        if (prevProps.errors !== this.props.errors) {
             this.setState({ key: Math.random() })
         }
     }
@@ -31,7 +31,7 @@ class RegisterAdmirerForm extends React.Component {
         }
     }
 
-    renderInput = ({ input, label, meta, type}) => {
+    renderInput = ({ input, label, meta, type }) => {
         const className = `field ${(meta.error && meta.touched) || this.props.errors[input.name] ? 'error' : ''}`;
         return (
             <div className={className}>
@@ -46,7 +46,7 @@ class RegisterAdmirerForm extends React.Component {
         this.props.registerAdmirer(formValues);
     }
 
-    render () {
+    render() {
         return (
             <form
                 onSubmit={this.props.handleSubmit(this.onSubmit)}
@@ -57,37 +57,37 @@ class RegisterAdmirerForm extends React.Component {
                     name="username"
                     component={this.renderInput}
                     label="Enter name"
-                    key={this.state.key} 
+                    key={this.state.key}
                 />
-                <Field 
+                <Field
                     className="field"
                     name="email"
                     component={this.renderInput}
                     label="Enter email"
-                    key={this.state.key + 1} 
+                    key={this.state.key + 1}
                 />
-                <Field 
+                <Field
                     className="field"
                     name="password"
                     component={this.renderInput}
                     label="Enter password"
                     type="password"
-                    key={this.state.key + 2} 
+                    key={this.state.key + 2}
                 />
-                <Field 
+                <Field
                     className="field"
                     name="password_repeat"
                     component={this.renderInput}
                     label="Repeat password"
                     type="password"
-                    key={this.state.key + 3} 
+                    key={this.state.key + 3}
                 />
-                <Field 
+                <Field
                     className="field"
                     name="categories"
                     component={this.renderInput}
                     label="Category placeholder"
-                    key={this.state.key + 4} 
+                    key={this.state.key + 4}
                 />
                 <button className="ui button primary">Submit</button>
             </form>
@@ -96,25 +96,25 @@ class RegisterAdmirerForm extends React.Component {
 }
 
 const validate = formValues => {
-    const errors ={};
+    const errors = {};
 
-    if(!formValues.username) {
+    if (!formValues.username) {
         errors.username = "You must enter a username";
     }
 
-    if(!formValues.email) {
+    if (!formValues.email) {
         errors.email = "You must enter an email";
     }
-    
-    if(!formValues.password) {
+
+    if (!formValues.password) {
         errors.password = "You must enter a password";
     }
 
-    if(!formValues.password_repeat) {
+    if (!formValues.password_repeat) {
         errors.password_repeat = "Please repeat password";
     }
 
-    if(formValues.password_repeat !== formValues.password) {
+    if (formValues.password_repeat !== formValues.password) {
         errors.password_repeat = "Passwords do not match";
     }
 

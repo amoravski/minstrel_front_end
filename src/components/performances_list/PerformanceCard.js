@@ -11,11 +11,11 @@ const PerformanceCard = ({ title, description, performer, location, date, catego
                 <div className="meta extra content">
                     <span>
                         Location: {location}
-                        <br/>
+                        <br />
                         Date: {new Date(date * 1000).toString().split(' ').slice(0, 5).join(' ')}
-                        <br/>
+                        <br />
                         Performer: {performer}
-                        <br/>
+                        <br />
                         Categories: {categories.toString()}
                     </span>
                 </div>

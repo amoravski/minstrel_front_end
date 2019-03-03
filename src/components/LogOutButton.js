@@ -8,7 +8,7 @@ class LogOutButton extends React.Component {
         this.props.logOut(this.props.user.jwt);
     }
 
-    render () {
+    render() {
         return (
             <button className="log-out-button ui circular button" onClick={this.handleClick}>
                 LOG OUT

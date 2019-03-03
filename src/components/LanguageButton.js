@@ -8,14 +8,14 @@ class LanguageButton extends React.Component {
         this.props.changeLanguage();
     }
 
-    render () {
+    render() {
         var languageText = "bg";
         if (this.props.language === "bg") {
             languageText = "gb uk";
         }
         return (
             <button className="language-button ui icon basic button" onClick={this.handleClick}>
-               <i className={`${languageText} flag`}></i>
+                <i className={`${languageText} flag`}></i>
             </button>
         )
     }
