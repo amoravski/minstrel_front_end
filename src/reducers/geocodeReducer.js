@@ -1,10 +1,12 @@
-export default ( state={}, action ) => {
+import _ from 'lodash';
+
+export default ( state={latLng: [], location: ''}, action ) => {
     switch (action.type) {
         case 'GEOCODE':
-            return {...state, latlng: action.payload}
+            return {...state, location: action.payload, latLng: _.values(action.payload.latLng)}
         case 'REVERSE_GEOCODE':
-            return {...state, location: action.payload}
+            return {...state, location: action.payload, latLng: _.values(action.payload.latLng)}
         default:
-            return {};
+            return state;
     }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';                                                     
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Map, TileLayer, Marker } from 'react-leaflet';
 import { connect } from 'react-redux';
 
 import { geocode, reverseGeocode } from '../../actions';

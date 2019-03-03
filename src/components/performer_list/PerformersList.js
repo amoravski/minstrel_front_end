@@ -1,32 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import minstrel_api from '../../apis/minstrel_api';
+import { getPerformers } from '../../actions';
 import PerformersCard from './PerformersCard';
 import './PerformersList.css';
 
 
 class PerformersList extends React.Component {
-    state = { performers: [] };
-    
     componentDidMount() {
-        this.getPerformers();
-    }
-
-    getPerformers = async () => {
-        const resp = await minstrel_api.get('/performer')
-        this.setState({
-            performers: resp.data.performers
-        });
+        this.props.getPerformers();
     }
 
     renderCards = () => {
-        return this.state.performers.map(performer => {
+        return this.props.performers.map(performer => {
             return (
                 <PerformersCard
                     name={performer.username}
                     key={performer.username}
-                    location={performer.location}
                 />
             );
         });
@@ -60,7 +50,7 @@ class PerformersList extends React.Component {
 }
 
 const mapStateToProps = state => {
-    return { sidebar: state.sidebar, user: state.user };
+    return { sidebar: state.sidebar, user: state.user, performers: state.performers };
 }
 
-export default connect(mapStateToProps, {})(PerformersList);
+export default connect(mapStateToProps, {getPerformers})(PerformersList);
