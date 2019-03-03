@@ -44,8 +44,8 @@ class RegisterPerformerForm extends React.Component {
     }
 
     onSubmit = formValues => {
-        console.log(formValues);
-        this.props.registerPerformer(formValues);
+        console.log({...formValues, location: this.props.geocode});
+        this.props.registerPerformer({...formValues, location: this.props.geocode.latLng});
     }
 
     render () {
@@ -138,7 +138,7 @@ const form = reduxForm({
 })(RegisterPerformerForm);
 
 const mapStateToProps = state => {
-    return { errors: state.register };
+    return { errors: state.register, geocode: state.geocode };
 }
 
 export default connect(mapStateToProps, { registerPerformer })(form);
