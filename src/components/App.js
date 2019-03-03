@@ -2,10 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { RouterSignedIn, RouterSignedOut } from './Router';
+import strings from '../strings';
 import './App.css';
 
 class App extends React.Component {
     render () {
+        strings.setLanguage(this.props.language);
         if (this.props.user.signedIn) {
             return (
                 <RouterSignedIn />
@@ -17,7 +19,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return { user: state.user };
+    return { user: state.user, language: state.language.current };
 }
 
 export default connect(mapStateToProps, {})(App);
