@@ -6,7 +6,7 @@ import minstrel_api from '../../apis/minstrel_api';
 class OffersList extends React.Component {
     state = { offers: [] };
 
-    componentDidMount () {
+    componentDidMount() {
         this.getOffers();
     }
 

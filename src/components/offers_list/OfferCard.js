@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OfferCard = ({title, description, owner, location, date, categories, size, type_of_event, requirements, compensation, status}) => {
+const OfferCard = ({ title, description, owner, location, date, categories, size, type_of_event, requirements, compensation, status }) => {
     return (
         <div className="ui card">
             <div className="content">
@@ -11,21 +11,21 @@ const OfferCard = ({title, description, owner, location, date, categories, size,
                 <div className="meta extra content">
                     <span>
                         Location: {location}
-                        <br/>
+                        <br />
                         Date: {new Date(date * 1000).toString().split(' ').slice(0, 5).join(' ')}
-                        <br/>
+                        <br />
                         Owner: {owner}
-                        <br/>
+                        <br />
                         Categories: {categories.toString()}
-                        <br/>
+                        <br />
                         Size: {size}
-                        <br/>
+                        <br />
                         Type of event: {type_of_event}
-                        <br/>
+                        <br />
                         Requirements: {requirements}
-                        <br/>
+                        <br />
                         Compensation: {compensation}
-                        <br/>
+                        <br />
                         Status: {status}
                     </span>
                 </div>

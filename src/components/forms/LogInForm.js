@@ -7,8 +7,8 @@ import { logIn } from '../../actions';
 class LogInForm extends React.Component {
     state = { key: Math.random() }
 
-    componentDidUpdate (prevProps) {
-        if(prevProps.login.error !== this.props.login.error) {
+    componentDidUpdate(prevProps) {
+        if (prevProps.login.error !== this.props.login.error) {
             this.setState({ key: Math.random() })
         }
     }
@@ -30,7 +30,7 @@ class LogInForm extends React.Component {
         }
     }
 
-    renderInput = ({ input, label, meta}) => {
+    renderInput = ({ input, label, meta }) => {
         const className = `field ${(meta.error && meta.touched) || this.props.login.error ? 'error' : ''}`;
         return (
             <div className={className}>
@@ -46,7 +46,7 @@ class LogInForm extends React.Component {
     }
 
 
-    render () {
+    render() {
         return (
             <form
                 onSubmit={this.props.handleSubmit(this.onSubmit)}
@@ -71,13 +71,13 @@ class LogInForm extends React.Component {
 }
 
 const validate = formValues => {
-    const errors ={};
+    const errors = {};
 
-    if(!formValues.email) {
+    if (!formValues.email) {
         errors.email = "You must enter an email";
     }
 
-    if(!formValues.password) {
+    if (!formValues.password) {
         errors.password = "You must enter a password";
     }
 

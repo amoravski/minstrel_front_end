@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Header from '../Header';
-import './Register.css';
 import RegisterPerformerForm from '../forms/RegisterPerformerForm';
+import './Register.css';
 
 const RegisterPerformerPage = () => {
     return (
         <div className="register ui">
-            <Header  register="active" />
+            <Header register="active" />
             <div className="register-types ui computer only centered grid">
                 <RegisterPerformerForm />
             </div>

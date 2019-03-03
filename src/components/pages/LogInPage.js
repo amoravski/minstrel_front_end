@@ -2,17 +2,17 @@ import React from 'react';
 
 import Header from '../Header';
 import LogInForm from '../forms/LogInForm';
-import './LogIn.css';
+import './LogInPage.css';
 
 const LogInPage = () => {
     return (
         <div className="log-in-page">
             <Header login="active" />
             <div className="log-in-form ui computer only centered grid" >
-                <LogInForm  />
+                <LogInForm />
             </div>
             <div className="log-in-form ui mobile only centered grid" >
-                <LogInForm  />
+                <LogInForm />
             </div>
 
         </div>

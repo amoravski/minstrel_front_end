@@ -1,29 +1,29 @@
 .landing-first {
-    display: flex;
-    margin-top: 10%;
-    flex-wrap: wrap;
-    height: 96vh;
-    justify-content: space-between;
-    overflow: hidden;
+  display: flex;
+  margin-top: 10%;
+  flex-wrap: wrap;
+  height: 96vh;
+  justify-content: space-between;
+  overflow: hidden;
 }
 .landing-content {
-    align-content: center;
-    position: relative;
+  align-content: center;
+  position: relative;
 }
 
 .landing-image {
-    margin-left: auto;
-    position: relative;
+  margin-left: auto;
+  position: relative;
 }
 
 .first-header {
-    font-weight: 700;
-    font-size: 65px;
-    line-height: 80px;
-    color: #F25F5C
+  font-weight: 700;
+  font-size: 65px;
+  line-height: 80px;
+  color: #F25F5C
 }
 
 .first-text {
-    font-size: 20px;
-    line-height: 30px;
+  font-size: 20px;
+  line-height: 30px;
 }

@@ -6,7 +6,7 @@ import minstrel_api from '../../apis/minstrel_api';
 class PerformancesList extends React.Component {
     state = { performances: [] };
 
-    componentDidMount () {
+    componentDidMount() {
         this.getPerformances();
     }
 
@@ -32,7 +32,7 @@ class PerformancesList extends React.Component {
         });
     }
 
-    render () {
+    render() {
         return (
             <div className="ui fluid container">
                 <h3 className="ui centered header">Performances</h3>

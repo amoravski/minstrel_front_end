@@ -1,12 +1,12 @@
 import React from 'react';
 
 import Sidebar from '../Sidebar';
-import Map from '../map/Map';
+import DisplayMap from '../map/DisplayMap';
 
 const App = () => {
     return (
         <div>
-            <Map interact={true} height="100vh" />
+            <DisplayMap interact={true} height="100vh" />
             <Sidebar map="active" />
         </div>
     );
