@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import { connect } from 'react-redux';
 
-type State = {
-  lat: number,
-  lng: number,
-  zoom: number,
-}
+import { getPerformers } from '../../actions';
 
-const markers = [
-    { position: [42.5, 23.3], text: "Music" },
-    { position: [42.6, 23.4], text: "Dances" }
-];
-
-export default class DefaultMap extends Component<{}, State> {
+class DefaultMap extends Component {
   state = {
     lat: 42.698334,
     lng: 23.319941,
@@ -20,6 +12,7 @@ export default class DefaultMap extends Component<{}, State> {
   }
 
   componentDidMount () {
+    this.props.getPerformers();
     // Removes annoying zoom control, maybe find a prettier way to do this?
     document.querySelector(".leaflet-top").remove();
   }
@@ -33,15 +26,31 @@ export default class DefaultMap extends Component<{}, State> {
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {markers.map(marker => 
-        <Marker position={marker.position}>
+        <div>
+        {this.props.performers.map(marker => 
+        <Marker key={marker.email} position={marker.location}>
           <Popup>
-            <span>{marker.text}</span>
+            <span>
+                <b>{marker.username}</b>
+                <br/>
+                categories:
+                <br/>
+                {marker.categories.map(category => 
+                <div>{category}</div>
+                )}
+            </span>
           </Popup>
         </Marker>
         )}
+        </div>
       </Map>
     </div>
     )
   }
 }
+
+const mapStateToProps = state => {
+    return { performers: state.performers };
+}
+
+export default connect(mapStateToProps, { getPerformers })(DefaultMap);
