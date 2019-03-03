@@ -8,13 +8,21 @@ import userReducer from './userReducer';
 import loginReducer from './loginReducer';
 import sidebarReducer from './sidebarReducer';
 import geocodeReducer from './geocodeReducer';
+import languageReducer from './languageReducer';
+import performersReducer from './performersReducer';
 
-const persistConfig = {
+const persistConfigUser = {
     key: 'user',
     storage
 }
 
-const persistedUser = persistReducer(persistConfig, userReducer)
+const persistConfigLanguage = {
+    key: 'language',
+    storage
+}
+
+const persistedUser = persistReducer(persistConfigUser, userReducer);
+const persistedLanguage = persistReducer(persistConfigLanguage, languageReducer);
 
 export default combineReducers({
     form: formReducer,
@@ -22,5 +30,7 @@ export default combineReducers({
     user: persistedUser,
     login: loginReducer,
     sidebar: sidebarReducer,
-    geocode: geocodeReducer
+    geocode: geocodeReducer,
+    language: persistedLanguage,
+    performers: performersReducer
 });
