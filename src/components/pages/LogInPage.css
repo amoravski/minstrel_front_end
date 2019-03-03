@@ -1,0 +1,17 @@
+.log-in-header {
+  margin-left: 140px;
+  margin-right: 140px;
+}
+
+.log-in-page {
+  height: 100vh;
+}
+
+.log-in-form {
+  height: 90%;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
