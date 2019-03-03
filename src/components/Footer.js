@@ -1,8 +1,8 @@
 import React from 'react';
-
-import './Footer.css'
 import { Link } from 'react-router-dom';
 
+import './Footer.css'
+import LanguageButton from './LanguageButton';
 
 const Footer = () => {
     return (
@@ -47,11 +47,7 @@ const Footer = () => {
                 </div>
                 <div className="three wide column">
                     <div className="ui secondary vertical menu">
-                        <h6>Partners</h6>
-                        <div className="right aligned content  menu">
-                            <p className="item">Zithor</p>
-                            <p className="item">Vzaaaz</p>
-                        </div>
+                        <LanguageButton />
                     </div>
                 </div>
             </div>
