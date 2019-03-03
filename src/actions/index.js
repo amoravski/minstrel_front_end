@@ -81,7 +81,7 @@ export const geocode = address => async dispatch => {
 };
 
 export const reverseGeocode = latLong => async dispatch => {
-    const resp = await mapquest_api.get(`http://open.mapquestapi.com/geocoding/v1/reverse?key=${mapquest_key}&location=${latLong}`)
+    const resp = await mapquest_api.get(`https://open.mapquestapi.com/geocoding/v1/reverse?key=${mapquest_key}&location=${latLong}`)
 
     dispatch({
         type: 'REVERSE_GEOCODE',
