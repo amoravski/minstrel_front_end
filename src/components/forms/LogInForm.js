@@ -30,12 +30,12 @@ class LogInForm extends React.Component {
         }
     }
 
-    renderInput = ({ input, label, meta }) => {
+    renderInput = ({ input, label, meta, type }) => {
         const className = `field ${(meta.error && meta.touched) || this.props.login.error ? 'error' : ''}`;
         return (
             <div className={className}>
                 <label>{label}</label>
-                <input {...input} />
+                <input {...input} type={type} />
                 {this.renderError(meta, this.props.login.error)}
             </div>
         );
@@ -63,6 +63,7 @@ class LogInForm extends React.Component {
                     component={this.renderInput}
                     label="Enter password"
                     key={this.state.key + 1}
+                    type="password"
                 />
                 <button className="ui button primary">Submit</button>
             </form>
