@@ -14,6 +14,14 @@
   z-index: 1;
 }
 
+.performer-search-form {
+  display: flex;
+  margin-top: 30vh;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .slide-in {
   animation: slide-in 0.5s forwards;
   -webkit-animation: slide-in 0.5s forwards;
