@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 
 import { logIn } from '../../actions';
+import './Form.css';
 
 class LogInForm extends React.Component {
     state = { key: Math.random() }
@@ -50,7 +51,7 @@ class LogInForm extends React.Component {
         return (
             <form
                 onSubmit={this.props.handleSubmit(this.onSubmit)}
-                className="ui form error"
+                className="auth-form ui form error"
             >
                 <Field
                     name="email"

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 
+import './Form.css';
 import { registerAdmirer } from '../../actions';
 
 class RegisterAdmirerForm extends React.Component {
@@ -50,7 +51,7 @@ class RegisterAdmirerForm extends React.Component {
         return (
             <form
                 onSubmit={this.props.handleSubmit(this.onSubmit)}
-                className="ui form error"
+                className="auth-form ui form error"
             >
                 <Field
                     className="field"
