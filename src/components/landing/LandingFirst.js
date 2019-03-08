@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './LandingFirst.css';
 import strings from '../../strings';
@@ -8,12 +9,12 @@ const LandingFirst = () => {
         <div className="landing-first ui">
             <div className="ui grid" >
                 <div className="row">
-                    <div className="landing-content ten wide column">
+                    <div className="landing-content nine wide column">
                         <div className="first-header">{strings.landing_first_header}</div>
                         <div className="first-text ui left aligned text">Minstrel is a platform for street performers and their admirers, made for the purpose of growing and maintaing and active community. Here at Minstrel your passion for performance is our priority!</div>
-                    </div>
-                    <div className="landing-image computer only six wide column">
-                        <img alt="" src="https://i.ytimg.com/vi/m5d1FlSeF-M/maxresdefault.jpg" className="ui large bordered rounded image" />
+                        <Link to="/register" className="ui join-now circular button">
+                            Join now!
+                        </Link>
                     </div>
                 </div>
             </div>

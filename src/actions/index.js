@@ -89,12 +89,30 @@ export const reverseGeocode = latLong => async dispatch => {
     });
 }
 
-export const getPerformers = () => async dispatch => {
+export const getPerformers = ( filterValues) => async dispatch => {
     const resp = await minstrel_api.get('/performer')
     dispatch({
         type: 'GET_PERFORMERS',
         payload: resp.data.performers
     });
+    if (filterValues) {
+        dispatch(filterPerformers(filterValues)); 
+    }
+}
+
+export const filterPerformers = (filterValues) => {
+    if (filterValues[0] === "categories") {
+        return {
+            type: 'FILTER_PERFORMERS_CATEGORIES',
+            payload: filterValues[1]
+        }
+    }
+    else {
+        return {
+            type: 'FILTER_PERFORMERS_LOCATION',
+            payload: filterValues[1]
+        }
+    }
 }
 
 export const openSidebar = () => {

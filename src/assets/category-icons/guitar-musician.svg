@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="75.278" height="75.278" viewBox="0 0 75.278 75.278">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffe066;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #264348;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-3 {
+        fill: #f25f5c;
+      }
+    </style>
+  </defs>
+  <g id="Group_271" data-name="Group 271" transform="translate(1573.59 -2712)">
+    <rect id="Rectangle_1177" data-name="Rectangle 1177" class="cls-1" width="75.278" height="75.278" transform="translate(-1573.59 2712)"/>
+    <line id="Line_17" data-name="Line 17" class="cls-2" y2="25.682" transform="translate(-1539.436 2716.564)"/>
+    <line id="Line_18" data-name="Line 18" class="cls-2" y2="25.682" transform="translate(-1532.221 2716.564)"/>
+    <path id="Path_1298" data-name="Path 1298" class="cls-2" d="M72.656,49.647c6.92,1.42,12.1,7.1,12.1,13.87a13.216,13.216,0,0,1-1.2,5.49,15.511,15.511,0,0,1,5.12,11.32c0,9.28-8.81,16.81-19.67,16.81s-19.67-7.53-19.67-16.81a15.561,15.561,0,0,1,5.45-11.62,13.13,13.13,0,0,1-1.07-5.19c0-6.65,4.99-12.24,11.73-13.79" transform="translate(-1604.881 2682.562)"/>
+    <path id="Path_1299" data-name="Path 1299" class="cls-3" d="M68.927,56.771a9.306,9.306,0,1,0,9.308,9.309A9.3,9.3,0,0,0,68.927,56.771Zm0,13.947a4.642,4.642,0,1,1,4.644-4.638A4.642,4.642,0,0,1,68.927,70.718Z" transform="translate(-1604.881 2682.562)"/>
+  </g>
+</svg>

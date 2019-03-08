@@ -1,6 +1,18 @@
+.main-header {
+  margin-top: 45px;
+}
 .main-header .item {
   font-weight: 700 !important;
-  font-size: 20px;
+  font-size: 15px;
+}
+
+.main-header .active {
+  color: #2DE1C2 !important;
+  background-color: #FFFFFF !important;
+}
+
+.main-header .header-logo {
+  width: 150px; 
 }
 
 .main-header-computer.ui.menu {
@@ -13,12 +25,23 @@
 }
 
 .ui.sign-up {
+  display: flex;
+  align-content: center;
+  height: 50px;
   background-color: #2DE1C2;
-  box-shadow: 0px 5px 10px #2DE1C2;
+  box-shadow: 0px 5px 10px rgba(0 ,0 ,0 ,16%);
+}
+
+.main-header .item:hover {
+  color: #2DE1C2 !important;
+  background-color: #FFFFFF !important;
 }
 
 .sign-up-text {
+  align-self: center;
+  height: 100%;
   font-weight: 700 !important;
   color: #FFFFFF !important;
-  font-size: 20px;
+  font-size: 15px;
+  margin-top: 24%;
 }

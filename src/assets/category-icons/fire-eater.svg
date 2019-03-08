@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="75.278" height="75.278" viewBox="0 0 75.278 75.278">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f25f5c;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #264348;
+        stroke: #264348;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-width: 1.741px;
+      }
+
+      .cls-4 {
+        fill: #ffe066;
+        stroke: #ffe066;
+        stroke-width: 0.8px;
+      }
+    </style>
+  </defs>
+  <g id="Group_290" data-name="Group 290" transform="translate(1405.809 -3043.611)">
+    <rect id="Rectangle_1187" data-name="Rectangle 1187" class="cls-1" width="75.278" height="75.278" transform="translate(-1405.809 3043.611)"/>
+    <g id="Group_256" data-name="Group 256" transform="translate(-1604.881 2682.562)">
+      <g id="Group_200" data-name="Group 200">
+        <rect id="Rectangle_1148" data-name="Rectangle 1148" class="cls-2" width="22.367" height="3.813" transform="translate(225.528 400.404)"/>
+        <path id="Path_1275" data-name="Path 1275" class="cls-3" d="M241.286,431.15h-9.353l-1.947-28.956h13.451Z"/>
+      </g>
+      <g id="Group_201" data-name="Group 201">
+        <path id="Path_1276" data-name="Path 1276" class="cls-4" d="M236.711,397.868h0a9.449,9.449,0,0,1-9.42-9.421h0c0-5.181,9.42-21.889,9.42-21.889,2.416,4.554,9.421,16.708,9.421,21.889h0A9.449,9.449,0,0,1,236.711,397.868Z"/>
+        <path id="Path_1277" data-name="Path 1277" class="cls-1" d="M234.454,387.375a6.168,6.168,0,1,0,7.931,3.637A6.167,6.167,0,0,0,234.454,387.375Zm3.217,8.666a3.076,3.076,0,1,1,1.816-3.953A3.076,3.076,0,0,1,237.671,396.041Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

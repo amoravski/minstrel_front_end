@@ -18,12 +18,26 @@
 
 .first-header {
   font-weight: 700;
-  font-size: 65px;
-  line-height: 80px;
-  color: #F25F5C
+  font-size: 45px;
+  line-height: 55px;
+  color: #F25F5C;
+  margin-bottom: 20px;
 }
 
 .first-text {
+  font-size: 15px;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+
+.ui.join-now {
+  display: default;
+  height: 60px;
+  width: 170px;
+  box-shadow: 0px 5px 10px rgba(0 ,0 ,0 ,16%);
+  background-color: #FFE066;
+  color: #FFFFFF;
   font-size: 20px;
-  line-height: 30px;
+  font-family: Montserrat;
+  font-weight: 700;
 }
