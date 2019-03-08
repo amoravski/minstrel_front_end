@@ -1,6 +1,7 @@
 .landing-fourth {
   height: 200vh;
   width: 100%;
+  margin-top: 300px;
 }
 .landing-fourth-card {
   height: 50%;
@@ -8,10 +9,7 @@
 
 .landing-fourth-content {
   display: flex;
-  align-content: center;
   height: 100%;
-  justify-content: center;
-  align-items: center;
   height: 100%;
   position: relative;
   flex-wrap: wrap;
@@ -19,11 +17,27 @@
 
 .fourth-card-header {
   font-weight: 700;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 45px;
+  color: #FFFFFF;
+}
+
+.left-header {
+  text-align: right;
+}
+
+.features-image {
+  width: 800px;
+}
+
+.features-list.ui.list {
+  margin-top: 25%;
 }
 
 .fourth-card-text {
-  font-size: 30px;
-  line-height: 45px;
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 30%;
+  font-weight: 700;
+  color: #FFFFFF;
 }

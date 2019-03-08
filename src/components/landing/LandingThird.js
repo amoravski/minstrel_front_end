@@ -1,12 +1,16 @@
 import React from 'react';
 
+import MapImage from '../../assets/landing-icons/4-map.svg';
+import OffersImage from '../../assets/landing-icons/5-dollar.svg';
+import PerformacesImage from '../../assets/landing-icons/6-star.svg';
+import CollabImage from '../../assets/landing-icons/7-collab.svg';
 import './LandingThird.css';
 
 const Card = props => {
     return (
-        <div className="ui card">
-            <div className="ui fluid image">
-                <img alt="" src="https://static1.squarespace.com/static/50e70b75e4b0d5ee8b74860b/t/515602bfe4b0fc0d94666eb5/1364591296832/profile+blank.jpg" />
+        <div className="third-card ui card">
+            <div className="ui third-card-image-container">
+                <img className={props.imageClass} alt={props.header} src={props.image} />
             </div>
             <div className="ui basic center aligned segment">
                 <div className="third-card-header ui center aligned header">
@@ -23,7 +27,7 @@ const Card = props => {
 const LandingThird = () => {
     return (
         <div className="landing-third ui">
-            <div className="third-card-header ui center aligned content">
+            <div className="landing-third-header ui center aligned content">
                 Our services
             </div>
             <div className="landing-third-content computer only ui center aligned centered grid container">
@@ -32,24 +36,32 @@ const LandingThird = () => {
                         <Card
                             header="Map"
                             text="We provide a free map of all performers"
+                            image={MapImage}
+                            imageClass="third-alternative-image"
                         />
                     </div>
                     <div className="four wide column">
                         <Card
                             header="Offers"
                             text="Reach out and invite your favorite performers"
+                            image={OffersImage}
+                            imageClass="third-card-image"
                         />
                     </div>
                     <div className="four wide column">
                         <Card
                             header="Performances"
                             text="Publish your events for all of your fans to see"
+                            image={PerformacesImage}
+                            imageClass="third-card-image"
                         />
                     </div>
                     <div className="four wide column">
                         <Card
                             header="Collaborations"
                             text="Invite other performers to collab with you"
+                            image={CollabImage}
+                            imageClass="third-card-image"
                         />
                     </div>
                 </div>
