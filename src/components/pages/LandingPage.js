@@ -9,6 +9,7 @@ import LandingSecond from '../landing/LandingSecond';
 import LandingThird from '../landing/LandingThird';
 import LandingFourth from '../landing/LandingFourth';
 import DisplayMap from '../map/DisplayMap';
+import BackgroundImage from '../../assets/landing/landing-bg.svg';
 import './LandingPage.css';
 
 Leaflet.Icon.Default.imagePath =
@@ -17,7 +18,7 @@ Leaflet.Icon.Default.imagePath =
 class LandingPage extends React.Component {
     render() {
         return (
-            <div>
+            <div style={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: '100% auto', height: '100%', backgroundRepeat: 'no-repeat' }} >
                 <div className="ui fluid container">
                     <Header landing="active" />
                     <div className="landing">
@@ -37,15 +38,17 @@ class LandingPage extends React.Component {
                         </div>
                     </div>
                     <div className="landing-map">
+                        <div className="map-shadow">
+                            <DisplayMap interact={false} height="80vh" />
+                        </div>
                         <div className="circular ui button">
                             <Link to="/map">
                                 Check our map
                             </Link>
                         </div>
-                        <DisplayMap interact={false} height="80vh" />
                     </div>
+                    <Footer />
                 </div>
-                <Footer />
             </div>
         );
     }
