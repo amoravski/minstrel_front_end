@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="1081" viewBox="0 0 800 1081">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #707070;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #2de1c2;
+      }
+
+      .cls-4 {
+        fill: #61e8e1;
+      }
+
+      .cls-5 {
+        fill: #ffe066;
+        stroke: rgba(0,0,0,0);
+      }
+
+      .cls-6 {
+        filter: url(#Intersection_1);
+      }
+
+      .cls-7 {
+        filter: url(#Path_111);
+      }
+
+      .cls-8 {
+        filter: url(#Rectangle_11);
+      }
+    </style>
+    <filter id="Rectangle_13" x="129.5" y="409.825" width="686.175" height="686.175" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1225" data-name="Rectangle 1225" class="cls-1" width="800" height="1081" transform="translate(-1053 5880)"/>
+    </clipPath>
+    <filter id="Rectangle_11" x="-148.5" y="-148.5" width="1097" height="1377" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="49.5" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_111" x="-84.799" y="692.315" width="168.8" height="168.795" filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Intersection_1" x="437.609" y="708.363" width="378.065" height="387.637" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Mask_Group_13" data-name="Mask Group 13" class="cls-2" transform="translate(1053 -5880)">
+    <g id="Group_381" data-name="Group 381">
+      <g class="cls-8" transform="matrix(1, 0, 0, 1, -1053, 5880)">
+        <rect id="Rectangle_11-2" data-name="Rectangle 11" class="cls-3" width="800" height="1080"/>
+      </g>
+      <g class="cls-7" transform="matrix(1, 0, 0, 1, -1053, 5880)">
+        <path id="Path_111-2" data-name="Path 111" class="cls-4" d="M394.1,360.874A69.4,69.4,0,1,0,463.517,430.3,69.393,69.393,0,0,0,394.1,360.874Zm0,104.015A34.618,34.618,0,1,1,428.737,430.3,34.619,34.619,0,0,1,394.1,464.889Z" transform="translate(-394.52 341.44)"/>
+      </g>
+      <g class="cls-6" transform="matrix(1, 0, 0, 1, -1053, 5880)">
+        <path id="Intersection_1-2" data-name="Intersection 1" class="cls-5" d="M5065.61,1001.675c0-.287,0-.56,0-.847,0-193.755,154.649-351.206,347.065-355.777V821.762c-95.417,4.383-171.591,83.238-171.725,179.912Z" transform="translate(-4612.5 78.83)"/>
+      </g>
+    </g>
+  </g>
+</svg>

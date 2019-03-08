@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="75.278" height="75.278" viewBox="0 0 75.278 75.278">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #264348;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #f25f5c;
+      }
+
+      .cls-4 {
+        fill: none;
+        stroke: #264348;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3.48px;
+      }
+    </style>
+  </defs>
+  <g id="Group_294" data-name="Group 294" transform="translate(1407.99 -3128.693)">
+    <rect id="Rectangle_1190" data-name="Rectangle 1190" class="cls-1" width="75.278" height="75.278" transform="translate(-1407.99 3128.693)"/>
+    <circle id="Ellipse_90" data-name="Ellipse 90" class="cls-2" cx="29.326" cy="29.326" r="29.326" transform="translate(-1399.621 3137.006)"/>
+    <path id="Path_1316" data-name="Path 1316" class="cls-3" d="M221.9,476.954a7.9,7.9,0,1,0,10.808,2.83A7.9,7.9,0,0,0,221.9,476.954Zm5.977,10.217a3.939,3.939,0,1,1,1.415-5.388A3.941,3.941,0,0,1,227.878,487.171Z" transform="translate(-1604.881 2682.562)"/>
+    <path id="Path_1317" data-name="Path 1317" class="cls-4" d="M239.442,483.039a14.79,14.79,0,0,1-27.216,1.438,14.805,14.805,0,0,1,27.216-1.438Z" transform="translate(-1604.881 2682.562)"/>
+  </g>
+</svg>
