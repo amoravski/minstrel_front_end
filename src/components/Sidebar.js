@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import SidebarBackground from '../assets/left-sidebar-new.svg';
+import Logo from '../assets/logo&ico/icon.svg';
 import { openSidebar, closeSidebar, initSidebar } from '../actions';
 import PerformerSearchForm from './forms/PerformerSearchForm';
 import LogOutButton from './LogOutButton';
@@ -26,9 +28,9 @@ class Sidebar extends React.Component {
     renderSignedOutMenu = aligned => {
         return (
             <div>
-                <div className={`ui inverted secondary ${aligned} menu`}>
-                    <Link to="/" className="item">
-                        <h3>Minstrel</h3>
+                <div className={`menu-main-sidebar ui inverted secondary ${aligned} menu`}>
+                    <Link to="/" className={`header-logo`}>
+                       <img alt="Minstrel" className="sidebar-header-logo" src={Logo} />
                     </Link>
                     <Link to="/map" className={`${this.props.map} item`}>
                         MAP
@@ -43,7 +45,7 @@ class Sidebar extends React.Component {
                         SIGN UP
                 </Link>
 
-                    <button className="close-button ui right floated icon button" onClick={this.toggleSidebar}>
+                    <button className="close-button ui right floated icon circular button" onClick={this.toggleSidebar}>
                         <i className="close icon" ></i>
                     </button>
                 </div>
@@ -90,7 +92,7 @@ class Sidebar extends React.Component {
             return (
                 <div>
                     <div className="ui computer only grid">
-                        <div className={`sidebar-main visible-sidebar ui visible wide sidebar ${this.props.sidebar.first ? "" : "slide-in"}`}>
+                        <div className={`sidebar-main visible-sidebar ui visible wide sidebar ${this.props.sidebar.first ? "" : "slide-in"}`} style={{ backgroundImage: `url(${SidebarBackground})`, backgroundSize: 'cover'}}>
                             {renderMenu("horizontal")}
                         </div>
                     </div>
@@ -105,7 +107,7 @@ class Sidebar extends React.Component {
         return (
             <div>
                 <div className="ui computer only grid">
-                    <div className="sidebar-main ui visible slide-out wide sidebar">
+                    <div className="sidebar-main ui visible slide-out wide sidebar" style={{ backgroundImage: `url(${SidebarBackground})`, backgroundSize: '100% auto'}}>
                         {renderMenu("horizontal")}
                     </div>
                 </div>

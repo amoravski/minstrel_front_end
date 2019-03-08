@@ -1,6 +1,25 @@
-.sidebar-main {
-  background: #2DE1C2;
+.sidebar-main.visible-sidebar.ui.sidebar {
   overflowX: hidden;
+}
+
+.menu-main-sidebar.ui.menu {
+  margin-top: 30px !important;
+  margin-left: 25px !important;
+}
+
+.sidebar-header-logo {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.menu-main-sidebar .active {
+  color: #F25F5C !important;
+  background-color: #2DE1C2 !important;
+}
+
+.manu-main-sidebar .item:hover {
+  color: #F25F5C !important;
+  background-color: #2DE1C2 !important;
 }
 .open-button {
   position: fixed; /* or absolute */
