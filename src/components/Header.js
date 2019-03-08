@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
+import Logo from '../assets/logo&ico/logo.svg';
 import './Header.css';
 
 const Header = props => {
@@ -8,7 +9,9 @@ const Header = props => {
         <div className="main-header">
             <div className="main-header-computer ui secondary menu computer only grid">
                 <div className="row">
-                    <Link to="/" className={`${props.landing} item`}>LOGO</Link>
+                    <Link to="/" className={`header-logo`}>
+                       <img alt="Minstrel" className="header-logo" src={Logo} /> 
+                    </Link>
                     <div className="right menu">
                         <Link to="/map" className="item">
                             MAP
@@ -17,15 +20,13 @@ const Header = props => {
                             PERFORMERS
                         </Link>
                         <Link to="/login" className={`${props.login} item`}>
-                            LOGIN
+                            LOG IN
                         </Link>
-                        <div className="item">
                             <div className="ui sign-up circular button">
                                 <Link to="/register" className="sign-up-text">
                                     SIGN UP
                                 </Link>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
