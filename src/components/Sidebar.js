@@ -72,6 +72,10 @@ class Sidebar extends React.Component {
                 <Link to="/performances" className={`${this.props.performances} item`}>
                     PERFORMANCES
                 </Link>
+                <Link to="/performances/new" className={`${this.props.performances} item`}>
+                    PERFORMCREATETEMP
+                </Link>
+
                 <Link to="/offers" className={`${this.props.offers} item`}>
                     OFFERS
                 </Link>

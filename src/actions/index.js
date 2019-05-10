@@ -47,6 +47,33 @@ export const registerPerformer = formValues => async dispatch => {
 
 };
 
+export const createPerformance = (formValues, jwt) => async dispatch => {
+    try {
+        const resp = await minstrel_api.post(`/performance/${formValues.title}`,
+            formValues, {
+            headers: {
+                Authorization: 'Bearer ' + jwt
+            }
+        });
+        dispatch({ type: "CREATE_PERFORMANCE", payload: resp.data });
+        history.push('/');
+    }
+    catch (error) {
+        if (error.response.data.status === "error") {
+            if (error.response.data.username) {
+                dispatch({ type: 'ERROR_USERNAME', payload: error.response.data.username });
+            }
+            if (error.response.data.email) {
+                dispatch({ type: 'ERROR_EMAIL', payload: error.response.data.email });
+            }
+            if (error.response.data.categories) {
+                dispatch({ type: 'ERROR_CATEGORIES', payload: error.response.data.categories });
+            }
+        }
+    }
+
+};
+
 export const logIn = formValues => async dispatch => {
     try {
         const resp = await minstrel_api.post('/login', formValues);
@@ -62,7 +89,6 @@ export const logIn = formValues => async dispatch => {
 
 export const logOut = jwt => async dispatch => {
     await minstrel_api.delete('/logout', {
-
         headers: {
             Authorization: 'Bearer ' + jwt
         }
@@ -89,15 +115,37 @@ export const reverseGeocode = latLong => async dispatch => {
     });
 }
 
-export const getPerformers = ( filterValues) => async dispatch => {
+export const getPerformers = (filterValues) => async dispatch => {
     const resp = await minstrel_api.get('/performer')
     dispatch({
         type: 'GET_PERFORMERS',
         payload: resp.data.performers
     });
     if (filterValues) {
-        dispatch(filterPerformers(filterValues)); 
+        dispatch(filterPerformers(filterValues));
     }
+}
+export const getAdmirers = () => async dispatch => {
+    const resp = await minstrel_api.get('/admirer')
+    dispatch({
+        type: 'GET_ADMIRERS',
+        payload: resp.data.admirers
+    });
+}
+export const getPerformances = () => async dispatch => {
+    const resp = await minstrel_api.get('/performance')
+    dispatch({
+        type: 'GET_PERFORMERS',
+        payload: resp.data.performances
+    });
+}
+
+export const getOffers = () => async dispatch => {
+    const resp = await minstrel_api.get('/offer')
+    dispatch({
+        type: 'GET_OFFERS',
+        payload: resp.data.offers
+    });
 }
 
 export const filterPerformers = (filterValues) => {
@@ -113,6 +161,16 @@ export const filterPerformers = (filterValues) => {
             payload: filterValues[1]
         }
     }
+}
+
+export const adminGetInformation = (jwt) => async dispatch => {
+    const resp = await minstrel_api.get(`/admin`,
+         {
+        headers: {
+            Authorization: 'Bearer ' + jwt
+        }
+    });
+    dispatch({ type: 'ADMIN_GET_INFORMATION', payload: resp.data });
 }
 
 export const openSidebar = () => {

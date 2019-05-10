@@ -1,24 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+import { getOffers } from '../../actions';
 import OfferCard from './OfferCard';
-import minstrel_api from '../../apis/minstrel_api';
 
 class OffersList extends React.Component {
-    state = { offers: [] };
-
     componentDidMount() {
-        this.getOffers();
-    }
-
-    getOffers = async () => {
-        const resp = await minstrel_api.get('/offer')
-        this.setState({
-            offers: resp.data.offers
-        });
+        this.props.getOffers();
     }
 
     renderCards = () => {
-        return this.state.offers.map(offer => {
+        return this.props.offers.map(offer => {
             return (
                 <OfferCard
                     title={offer.title}
@@ -49,4 +41,8 @@ class OffersList extends React.Component {
     }
 }
 
-export default OffersList;
+const mapStateToProps = state => {
+    return { user: state.user, offers: state.offer };
+}
+
+export default connect(mapStateToProps, { getOffers })(OffersList);

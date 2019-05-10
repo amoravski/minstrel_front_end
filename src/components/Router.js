@@ -12,6 +12,9 @@ import MapPage from './pages/MapPage';
 import DashboardPage from './pages/DashboardPage';
 import OffersPage from './pages/OffersPage';
 import PerformancesPage from './pages/PerformancesPage';
+import PerformancesCreatePage from './pages/PerformancesCreatePage';
+import AdminEventsPage from './pages/AdminEventsPage.js';
+import AdminAccountsPage from './pages/AdminAccountsPage.js';
 
 export const RouterSignedOut = () => {
     return (
@@ -41,9 +44,25 @@ export const RouterSignedIn = () => {
                     <Route path="/performers" exact component={PerformersListPage} />
                     <Route path="/offers" exact component={OffersPage} />
                     <Route path="/performances" exact component={PerformancesPage} />
+                    <Route path="/performances/new" exact component={PerformancesCreatePage} />
+                    <Route path="/admin/accounts" exact component={AdminAccountsPage} />
+                    <Route path="/admin/events" exact component={AdminEventsPage} />
                 </div>
             </Router>
         </div>
     );
 };
 
+export const RouterSignedInAdmin = () => {
+    return (
+        <div className="ui fluid container">
+            <Router history={history}>
+                <div>
+                    <Route path="/" exact component={DashboardPage} />
+                    <Route path="/admin/accounts" exact component={AdminAccountsPage} />
+                    <Route path="/admin/events" exact component={AdminEventsPage} />
+                </div>
+            </Router>
+        </div>
+    );
+}

@@ -1,24 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+import { getPerformances } from '../../actions';
 import PerformanceCard from './PerformanceCard';
-import minstrel_api from '../../apis/minstrel_api';
 
 class PerformancesList extends React.Component {
-    state = { performances: [] };
-
     componentDidMount() {
-        this.getPerformances();
-    }
-
-    getPerformances = async () => {
-        const resp = await minstrel_api.get('/performance')
-        this.setState({
-            performances: resp.data.performances
-        });
+        this.props.getPerformances();
     }
 
     renderCards = () => {
-        return this.state.performances.map(performance => {
+        return this.props.performances.map(performance => {
             return (
                 <PerformanceCard
                     title={performance.title}
@@ -44,4 +36,8 @@ class PerformancesList extends React.Component {
     }
 }
 
-export default PerformancesList;
+const mapStateToProps = state => {
+    return { user: state.user, performances: state.performance };
+}
+
+export default connect(mapStateToProps, { getPerformances })(PerformancesList);

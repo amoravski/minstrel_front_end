@@ -10,6 +10,9 @@ import sidebarReducer from './sidebarReducer';
 import geocodeReducer from './geocodeReducer';
 import languageReducer from './languageReducer';
 import performersReducer from './performersReducer';
+import admirerReducer from './admirerReducer';
+import performanceReducer from './performanceReducer';
+import offerReducer from './offerReducer.js';
 
 const persistConfigUser = {
     key: 'user',
@@ -32,5 +35,8 @@ export default combineReducers({
     sidebar: sidebarReducer,
     geocode: geocodeReducer,
     language: persistedLanguage,
-    performers: performersReducer
+    performers: performersReducer,
+    admirers: admirerReducer,
+    performance: performanceReducer,
+    offer: offerReducer
 });

@@ -1,22 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getPerformers } from '../../actions';
-import PerformersCard from './PerformersCard';
-import './PerformersList.css';
+import { getAdmirers } from '../../actions';
+import AdmirerCard from './AdmirerCard';
+import './AdmirersList.css';
 
 
-class PerformersList extends React.Component {
+class AdmirersList extends React.Component {
     componentDidMount() {
-        this.props.getPerformers();
+        this.props.getAdmirers();
     }
 
     renderCards = () => {
-        return this.props.performers.map(performer => {
+        return this.props.admirers.map(admirer => {
             return (
-                <PerformersCard
-                    name={performer.username}
-                    key={performer.username}
+                <AdmirerCard
+                    name={admirer.username}
+                    key={admirer.username}
                     admin={this.props.admin}
                 />
             );
@@ -51,7 +51,7 @@ class PerformersList extends React.Component {
 }
 
 const mapStateToProps = state => {
-    return { sidebar: state.sidebar, user: state.user, performers: state.performers };
+    return { sidebar: state.sidebar, user: state.user, admirers: state.admirers };
 }
 
-export default connect(mapStateToProps, { getPerformers })(PerformersList);
+export default connect(mapStateToProps, { getAdmirers })(AdmirersList);
